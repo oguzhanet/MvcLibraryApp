@@ -234,6 +234,7 @@
     <Content Include="Views\Shared\_Layout1.cshtml" />
     <Content Include="Views\Category\Index.cshtml" />
     <Content Include="Views\Category\Add.cshtml" />
+    <Content Include="Views\Category\GetById.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

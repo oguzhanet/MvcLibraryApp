@@ -20,8 +20,8 @@
     <tr>
         <th>@category.Id</th>
         <td>@category.CategoryName</td>
-        <td><a class="btn btn-danger"> Sil </a></td>
-        <td><a class="btn btn-warning"> Güncelle </a></td>
+        <td><a href="/Category/Delete/@category.Id" class="btn btn-danger"> Sil </a></td>
+        <td><a href="/Category/GetById/@category.Id" class="btn btn-warning"> Güncelle </a></td>
     </tr>
     }
 </table>
