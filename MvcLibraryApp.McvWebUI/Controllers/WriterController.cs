@@ -7,13 +7,13 @@ using MvcLibraryApp.McvWebUI.Models.Entity;
 
 namespace MvcLibraryApp.McvWebUI.Controllers
 {
-    public class CategoryController : Controller
+    public class WriterController : Controller
     {
-        // GET: Category
+        // GET: Writer
         LibraryAppDbEntities db = new LibraryAppDbEntities();
         public ActionResult Index()
         {
-            var result = db.Categories.ToList();
+            var result = db.Writers.ToList();
             return View(result);
         }
 
@@ -24,33 +24,27 @@ namespace MvcLibraryApp.McvWebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Add(Categories categories)
+        public ActionResult Add(Writers writers)
         {
-            db.Categories.Add(categories);
+            db.Writers.Add(writers);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
 
         public ActionResult Delete(int id)
         {
-            var result = db.Categories.Find(id);
-            db.Categories.Remove(result);
+            var result = db.Writers.Find(id);
+            db.Writers.Remove(result);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
 
         public ActionResult GetById(int id)
         {
-            var result = db.Categories.Find(id);
+            var result = db.Writers.Find(id);
             return View("GetById", result);
         }
 
-        public ActionResult Update(Categories categories)
-        {
-            var result = db.Categories.Find(categories.Id);
-            result.CategoryName = categories.CategoryName;
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+       
     }
 }

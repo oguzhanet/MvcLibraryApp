@@ -1,0 +1,33 @@
+﻿@using MvcLibraryApp.McvWebUI.Models.Entity
+@model List<Writers>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h2>Yazarlar</h2>
+<a href="/Writer/Add/" class="btn btn-default" style="background-color:deepskyblue; margin-block-end:15px;">Yeni Yazar Ekle</a>
+
+<table class="table table-bordered" >
+    <tr>
+        <th>Id</th>
+        <th>Yazar Adı</th>
+        <th>Yazar Soyadı</th>
+        <th>Detay</th>
+        <th>Silme İşlemi</th>
+        <th>Güncelleme İşlemi</th>
+    </tr>
+    @foreach (var writer in Model)
+    {
+        <tr>
+            <th>@writer.Id</th>
+            <td>@writer.WriterName</td>
+            <td>@writer.WriterLastName</td>
+            <td>@writer.Detail</td>
+            <td>@Html.ActionLink("Sil","Delete",new {id=writer.Id },
+               new { @class="btn btn-danger", onclick="return confirm('Sil İstiyor Musunuz?')"})</td>
+            <td><a href="/Writer/GetById/@writer.Id" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+    }
+</table>
+

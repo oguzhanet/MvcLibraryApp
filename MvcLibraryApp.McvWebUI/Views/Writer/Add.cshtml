@@ -1,0 +1,23 @@
+﻿@model MvcLibraryApp.McvWebUI.Models.Entity.Writers
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h3>Yazar Ekleme Sayfası</h3>
+<br />
+
+<form class="form-group" method="post">
+    <div>
+        @Html.Label("Yazar Adı")
+        @Html.TextBoxFor(x => x.WriterName, new { @class = "form-control" })
+        <br />
+        @Html.Label("Yazar Soyadı")
+        @Html.TextBoxFor(x => x.WriterLastName, new { @class = "form-control" })
+        <br />
+        @Html.Label("Detay")
+        @Html.TextAreaFor(x => x.Detail, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-info">Yazar Ekle</button>
+    </div>
+</form>

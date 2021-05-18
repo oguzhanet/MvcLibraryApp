@@ -1,0 +1,26 @@
+﻿@model MvcLibraryApp.McvWebUI.Models.Entity.Writers
+@{
+    ViewBag.Title = "GetById";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+@using (Html.BeginForm("Update", "Writer", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Yazar Id")
+        @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
+        <br />
+        @Html.Label("Yazar Adı")
+        @Html.TextBoxFor(x => x.WriterName, new { @class = "form-control" })
+        <br />
+        @Html.Label("Yazar Soyadı")
+        @Html.TextBoxFor(x => x.WriterLastName, new { @class = "form-control" })
+        <br />
+        @Html.Label("Detay")
+        @Html.TextAreaFor(x => x.Detail, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-default" style="background-color:coral; color:white">Güncelle</button>
+    </div>
+}
+
