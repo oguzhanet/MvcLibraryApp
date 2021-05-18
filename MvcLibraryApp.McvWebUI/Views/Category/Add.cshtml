@@ -1,0 +1,16 @@
+﻿@model MvcLibraryApp.McvWebUI.Models.Entity.Categories
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+<h3>Kategori Ekleme Sayfası</h3>
+<br />
+<form class="form-group" method="post">
+    <div>
+        @Html.Label("Kategori Adı")
+        @Html.TextBoxFor(x=>x.CategoryName, new { @class="form-control"} )
+        <br />
+        <button class="btn btn-info">Kategori Ekle</button>
+    </div>
+</form>
+

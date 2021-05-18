@@ -1,8 +1,27 @@
-﻿
+﻿@using MvcLibraryApp.McvWebUI.Models.Entity
+@model List<Categories>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout1.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Kategoriler</h2>
+<a href="/Category/Add/" class="btn btn-default" style="background-color:deepskyblue; margin-block-end:15px;">Yeni Kategori Ekle</a>
 
+<table class="table table-bordered container">
+    <tr>
+        <th>Id</th>
+        <th>Kategori Adı</th>
+        <th>Silme İşlemi</th>
+        <th>Güncelleme İşlemi</th>
+    </tr>
+    @foreach (var category in Model)
+    {
+    <tr>
+        <th>@category.Id</th>
+        <td>@category.CategoryName</td>
+        <td><a class="btn btn-danger"> Sil </a></td>
+        <td><a class="btn btn-warning"> Güncelle </a></td>
+    </tr>
+    }
+</table>
