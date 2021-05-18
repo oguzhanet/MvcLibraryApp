@@ -45,6 +45,14 @@ namespace MvcLibraryApp.McvWebUI.Controllers
             return View("GetById", result);
         }
 
-       
+        public ActionResult Update(Writers writers)
+        {
+            var result = db.Writers.Find(writers.Id);
+            result.WriterName = writers.WriterName;
+            result.WriterLastName = writers.WriterLastName;
+            result.Detail = writers.Detail;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
