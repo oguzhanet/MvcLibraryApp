@@ -1,0 +1,40 @@
+﻿@using MvcLibraryApp.McvWebUI.Models.Entity
+@model List<Members>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h2>Üyeler</h2>
+<a href="/Member/Add/" class="btn btn-default" style="background-color:deepskyblue; margin-block-end:15px;">Yeni Üye Ekle</a>
+
+<table class="table table-bordered container">
+    <tr>
+        <th>Id</th>
+        <th>Üye Adı</th>
+        <th>Üye Soyadı</th>
+        <th>İşi veya Okulu</th>
+        <th>Mail Adresi</th>
+        <th>Telefonu</th>
+        <th>Kullanıcı Adı</th>
+        <th>Şifresi</th>
+        <th>Silme İşlemi</th>
+        <th>Güncelleme İşlemi</th>
+    </tr>
+    @foreach (var member in Model)
+    {
+        <tr>
+            <th>@member.Id</th>
+            <td>@member.MemberName</td>
+            <td>@member.MemberLastName</td>
+            <td>@member.School</td>
+            <td>@member.Mail</td>
+            <td>@member.Phone</td>
+            <td>@member.NickName</td>
+            <td>@member.Password</td>
+            <td><a href="/Member/Delete/@member.Id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Member/GetById/@member.Id" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+    }
+</table>
+

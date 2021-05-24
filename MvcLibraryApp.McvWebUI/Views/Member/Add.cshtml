@@ -1,0 +1,50 @@
+﻿@model MvcLibraryApp.McvWebUI.Models.Entity.Members
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h3>Üye Ekleme Sayfası</h3>
+<br />
+<form class="form-group" method="post">
+    <div>
+        @Html.Label("Üye Adı")
+        @Html.TextBoxFor(x => x.MemberName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.MemberName, "", new { @style = "color:red" })
+        <br />
+        @Html.Label("Üye Soyadı")
+        @Html.TextBoxFor(x => x.MemberLastName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.MemberLastName, "", new { @style = "color:red" })
+        <br />
+        @Html.Label("İşi veya Okulu")
+        @Html.TextBoxFor(x => x.School, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.School, "", new { @style = "color:red" })
+        <br />
+        @Html.Label("Mail Adresi")
+        @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+        @*@Html.ValidationMessageFor(x => x.Mail, "", new { @style = "color:red" })*@
+        <br />
+        @Html.Label("Telefon Numarası")
+        @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+        @*@Html.ValidationMessageFor(x => x.Phone, "", new { @style = "color:red" })*@
+        <br />
+        @Html.Label("Fotoğraf Linki")
+        @Html.TextBoxFor(x => x.Image, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Image, "", new { @style = "color:red" })
+        <br />
+        @Html.Label("Kullanıcı Adı")
+        @Html.TextBoxFor(x => x.NickName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.NickName, "", new { @style = "color:red" })
+        <br />
+        @Html.Label("Şifre")
+        @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Password, "", new { @style = "color:red" })
+        <br />
+
+        <button class="btn btn-info">Üye Ekle</button>
+
+    </div>
+    <br />
+</form>
+
+
