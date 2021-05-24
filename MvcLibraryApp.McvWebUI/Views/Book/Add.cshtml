@@ -1,0 +1,37 @@
+﻿@model MvcLibraryApp.McvWebUI.Models.Entity.Books
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h2>Kitap Ekleme Sayfası</h2>
+
+<br />
+
+<form class="form-group" method="post">
+    <div>
+        @Html.Label("Kitabın Adı")
+        @Html.TextBoxFor(x => x.BookName, new { @class = "form-control" })
+        <br />
+        @Html.Label("Kitabın Kategorisi")
+        @Html.DropDownListFor(x => x.Categories.Id, (List<SelectListItem>)ViewBag.category, new { @class = "form-control" })
+        <br />
+        @Html.Label("Kitabın Yazarı")
+        @Html.DropDownListFor(x => x.Writers.Id, (List<SelectListItem>)ViewBag.writer, new { @class = "form-control" })
+        <br />
+        @Html.Label("Yayınevi")
+        @Html.TextBoxFor(x => x.PublishingHouse, new { @class = "form-control" })
+        <br />
+        @Html.Label("Basım Yılı")
+        @Html.TextBoxFor(x => x.YearOfPrinting, new { @class = "form-control" })
+        <br />
+        @Html.Label("Sayfa Sayısı")
+        @Html.TextBoxFor(x => x.NumberOfPage, new { @class = "form-control" })
+        <br />
+        @*@Html.Label("Durum")
+        @Html.TextBoxFor(x => x.Status, new { @class = "form-control" })
+        <br />*@
+        <button class="btn btn-info">Kitap Ekle</button>
+    </div>
+</form>
+

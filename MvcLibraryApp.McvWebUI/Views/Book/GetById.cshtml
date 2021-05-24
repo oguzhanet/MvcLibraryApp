@@ -1,0 +1,36 @@
+﻿@model MvcLibraryApp.McvWebUI.Models.Entity.Books
+
+@{
+    ViewBag.Title = "GetById";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+@using (Html.BeginForm("Update", "Book", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Kİtap Id")
+        @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
+        <br />
+        @Html.Label("Kitap Adı")
+        @Html.TextBoxFor(x => x.BookName, new { @class = "form-control" })
+        <br />
+        @Html.Label("Kitabın Kategorisi")
+        @Html.DropDownListFor(x=>x.Categories.Id,(List<SelectListItem>)ViewBag.category, new { @class = "form-control" })
+        <br />
+        @Html.Label("Kitabın Yazarı")
+        @Html.DropDownListFor(x=>x.Writers.Id,(List<SelectListItem>)ViewBag.writer, new { @class = "form-control" })
+        <br />
+        @Html.Label("Yayınevi")
+        @Html.TextBoxFor(x => x.PublishingHouse, new { @class = "form-control" })
+        <br />
+        @Html.Label("Basım Yılı")
+        @Html.TextBoxFor(x => x.YearOfPrinting, new { @class = "form-control" })
+        <br />
+        @Html.Label("Sayfa Sayısı")
+        @Html.TextBoxFor(x => x.NumberOfPage, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-default" style="background-color:coral; color:white">Kitap Bilgilerini Güncelle</button>
+    </div>
+}
+

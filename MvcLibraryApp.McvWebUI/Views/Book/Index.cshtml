@@ -1,0 +1,58 @@
+﻿@using MvcLibraryApp.McvWebUI.Models.Entity
+@model List<Books>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h2>Kitap İşlemleri Sayfası</h2>
+
+
+@using (Html.BeginForm("Index", "Book", FormMethod.Get))
+{
+    <div style="margin-bottom:15px;">
+       <table>
+           <tr>
+               <td>
+                   <a href="/Book/Add/" class="btn btn-default" style="background-color:deepskyblue; margin-right:300px;">Yeni Kitap Ekle</a>
+               </td>
+               <td>
+                   <input style="margin-right:100px" type="text" class="form-control" name="books" placeholder="Aranacak kitabı giriniz ve enter yapınız.." />
+               </td>  
+               <td>
+                   <input class="btn btn-success" style="margin-left:15px" type="submit" value="Ara" />
+               </td>
+           </tr>
+       </table>
+    </div>
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Kitabın Adı</th>
+        <th>Kitabın Kategorisi</th>
+        <th>Kitabın Yazarı</th>
+        <th>Yayınevi</th>
+        <th>Basım Yılı</th>
+        <th>Sayfa Sayısı</th>
+        <th>Durum</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.Id</th>
+            <td>@item.BookName</td>
+            <td>@item.Categories.CategoryName</td>
+            <td>@item.Writers.WriterName @*&nbsp;*@ @item.Writers.WriterLastName</td>
+            <td>@item.PublishingHouse</td>
+            <td>@item.YearOfPrinting</td>
+            <td>@item.NumberOfPage</td>
+            <td>@item.Status</td>
+            <td><a href="/Book/Delete/@item.Id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Book/GetById/@item.Id" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+    }
+</table>
