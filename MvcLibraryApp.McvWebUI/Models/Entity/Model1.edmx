@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="LibraryAppDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="LibraryAppDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Books">
           <Key>
             <PropertyRef Name="Id" />
@@ -29,15 +29,14 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EmployeeName" Type="varchar" MaxLength="50" />
-          <Property Name="EmployeeNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="Members">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MemberName" Type="varchar" MaxLength="20" />
           <Property Name="MemberLastName" Type="varchar" MaxLength="20" />
           <Property Name="School" Type="varchar" MaxLength="100" />
@@ -47,7 +46,6 @@
           <Property Name="NickName" Type="varchar" MaxLength="20" />
           <Property Name="Password" Type="varchar" MaxLength="20" />
           <Property Name="IdentityNumber" Type="varchar" MaxLength="11" />
-          <Property Name="MemberNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="Movements">
           <Key>
@@ -221,8 +219,7 @@
             <End Role="Penalties" EntitySet="Penalties" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LibraryAppDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -256,7 +253,6 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="EmployeeNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="Movements" Relationship="Self.FK_Movements_Employees" FromRole="Employees" ToRole="Movements" />
         </EntityType>
         <EntityType Name="Members">
@@ -273,7 +269,6 @@
           <Property Name="NickName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="IdentityNumber" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
-          <Property Name="MemberNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="Movements" Relationship="Self.FK_Movements_Members" FromRole="Members" ToRole="Movements" />
           <NavigationProperty Name="Penalties" Relationship="Self.FK_Penalties_Members" FromRole="Members" ToRole="Penalties" />
         </EntityType>
@@ -489,7 +484,6 @@
               <MappingFragment StoreEntitySet="Employees">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
-                <ScalarProperty Name="EmployeeNumber" ColumnName="EmployeeNumber" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -506,7 +500,6 @@
                 <ScalarProperty Name="NickName" ColumnName="NickName" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="IdentityNumber" ColumnName="IdentityNumber" />
-                <ScalarProperty Name="MemberNumber" ColumnName="MemberNumber" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

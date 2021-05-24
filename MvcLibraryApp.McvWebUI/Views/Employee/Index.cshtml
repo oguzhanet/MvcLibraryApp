@@ -1,8 +1,28 @@
-﻿
+﻿@using MvcLibraryApp.McvWebUI.Models.Entity
+@model List<Employees>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout1.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Personeller</h2>
+<a href="/Employee/Add/" class="btn btn-default" style="background-color:deepskyblue; margin-block-end:15px;">Yeni Kategori Ekle</a>
+
+<table class="table table-bordered container">
+    <tr>
+        <th>Id</th>
+        <th>Personel İsmi</th>
+        <th>Silme İşlemi</th>
+        <th>Güncelleme İşlemi</th>
+    </tr>
+    @foreach (var employee in Model)
+    {
+        <tr>
+            <th>@employee.Id</th>
+            <td>@employee.EmployeeName</td>
+            <td><a href="/Employee/Delete/@employee.Id" class="btn btn-danger"> Sil </a></td>
+            <td><a href="/Employee/GetById/@employee.Id" class="btn btn-warning"> Güncelle </a></td>
+        </tr>
+    }
+</table>
 

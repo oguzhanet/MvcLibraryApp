@@ -1,0 +1,20 @@
+﻿@model MvcLibraryApp.McvWebUI.Models.Entity.Employees
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h3>Personel Ekleme Sayfası</h3>
+<br />
+<form class="form-group" method="post">
+    <div>
+        @Html.Label("Personel İsmi")
+        @Html.TextBoxFor(x => x.EmployeeName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x=>x.EmployeeName, "", new {@style="color:red"})
+        @*<input type="text" class="form-control" name="EmployeeName" required="" />*@
+        <br />
+        <button class="btn btn-info">Personel Ekle</button>
+    </div>
+</form>
+
+
