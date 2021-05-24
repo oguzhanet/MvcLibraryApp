@@ -1,0 +1,22 @@
+﻿@model MvcLibraryApp.McvWebUI.Models.Entity.Employees
+@{
+    ViewBag.Title = "GetById";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<br />
+
+@using (Html.BeginForm("Update", "Employee", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.Label("Personel Id")
+    @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
+    <br />
+    @Html.Label("Personel İsmi")
+    @Html.TextBoxFor(x => x.EmployeeName, new { @class = "form-control"})
+</div>
+    <div>
+        <button class="btn btn-default" style="background-color:coral; color:white">Güncelle</button>
+    </div>
+}
+

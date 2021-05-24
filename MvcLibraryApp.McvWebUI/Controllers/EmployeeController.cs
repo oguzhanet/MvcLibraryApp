@@ -35,5 +35,26 @@ namespace MvcLibraryApp.McvWebUI.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Delete(int id)
+        {
+            var result = db.Employees.Find(id);
+            db.Employees.Remove(result);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult GetById(int id)
+        {
+            var result = db.Employees.Find(id);
+            return View("GetById", result);
+        }
+
+        public ActionResult Update(Employees employees)
+        {
+            var result = db.Employees.Find(employees.Id);
+            result.EmployeeName = employees.EmployeeName;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
