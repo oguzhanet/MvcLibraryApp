@@ -41,7 +41,7 @@ namespace MvcLibraryApp.McvWebUI.Models.Entity
         [Required(ErrorMessage = "Þifre boþ Olamaz!")]
         [StringLength(20, ErrorMessage = "En fazla 20 karakter olabilir!")]
         public string Password { get; set; }
-        [StringLength(20, ErrorMessage = "11 karakter olmalýdýr!")]
+        //[StringLength(20, ErrorMessage = "11 karakter olmalýdýr!")]
         public string IdentityNumber { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

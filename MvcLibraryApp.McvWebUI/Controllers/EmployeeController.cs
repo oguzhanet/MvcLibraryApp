@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MvcLibraryApp.McvWebUI.Models.Entity;
+using PagedList;
 
 namespace MvcLibraryApp.McvWebUI.Controllers
 {
@@ -11,9 +12,9 @@ namespace MvcLibraryApp.McvWebUI.Controllers
     {
         // GET: Employee
         LibraryAppDbEntities db = new LibraryAppDbEntities();
-        public ActionResult Index()
+        public ActionResult Index(int page=1)
         {
-            var result = db.Employees.ToList();
+            var result = db.Employees.ToList().ToPagedList(page, 10);
             return View(result);
         }
 

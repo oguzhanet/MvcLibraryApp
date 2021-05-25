@@ -1,0 +1,57 @@
+﻿@model MvcLibraryApp.McvWebUI.Models.Entity.Members
+@{
+    ViewBag.Title = "GetById";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<br />
+
+@using (Html.BeginForm("Update", "Member", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.Label("Personel Id")
+    @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
+    <br />
+    @Html.Label("Üye Adı")
+    @Html.TextBoxFor(x => x.MemberName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.MemberName, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Üye Soyadı")
+    @Html.TextBoxFor(x => x.MemberLastName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.MemberLastName, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("İşi veya Okulu")
+    @Html.TextBoxFor(x => x.School, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.School, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Mail Adresi")
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    @*@Html.ValidationMessageFor(x => x.Mail, "", new { @style = "color:red" })*@
+    <br />
+    @Html.Label("Telefon Numarası")
+    @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+    @*@Html.ValidationMessageFor(x => x.Phone, "", new { @style = "color:red" })*@
+    <br />
+    @Html.Label("Fotoğraf Linki")
+    @Html.TextBoxFor(x => x.Image, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Image, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Tc kimlik Numarası")
+    @Html.TextBoxFor(x => x.IdentityNumber, new { @class = "form-control" })
+    @*@Html.ValidationMessageFor(x => x.IdentityNumber, "", new { @style = "color:red" })*@
+    <br />
+    @Html.Label("Kullanıcı Adı")
+    @Html.TextBoxFor(x => x.NickName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.NickName, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Şifre")
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Password, "", new { @style = "color:red" })
+    <br />
+</div>
+    <div>
+        <button class="btn btn-default" style="background-color:coral; color:white">Güncelle</button>
+    </div>
+}
+
+

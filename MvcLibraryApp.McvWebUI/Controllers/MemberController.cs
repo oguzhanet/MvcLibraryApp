@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MvcLibraryApp.McvWebUI.Models.Entity;
+using PagedList;
 
 namespace MvcLibraryApp.McvWebUI.Controllers
 {
@@ -11,9 +12,9 @@ namespace MvcLibraryApp.McvWebUI.Controllers
     {
         // GET: Member
         LibraryAppDbEntities db = new LibraryAppDbEntities();
-        public ActionResult Index()
+        public ActionResult Index(int page=1)
         {
-            var result = db.Members.ToList();
+            var result = db.Members.ToList().ToPagedList(page, 10);
             return View(result);
         }
 
@@ -31,6 +32,36 @@ namespace MvcLibraryApp.McvWebUI.Controllers
                 return View("Add");
             }
             db.Members.Add(members);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Delete(int id)
+        {
+            var result = db.Members.Find(id);
+            db.Members.Remove(result);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult GetById(int id)
+        {
+            var result = db.Members.Find(id);
+            return View("GetById", result);
+        }
+
+        public ActionResult Update(Members members)
+        {
+            var result = db.Members.Find(members.Id);
+            result.MemberName = members.MemberName;
+            result.MemberLastName = members.MemberLastName;
+            result.Mail = members.Mail;
+            result.Phone = members.Phone;
+            result.School = members.School;
+            result.Image = members.Image;
+            result.IdentityNumber = members.IdentityNumber;
+            result.NickName = members.NickName;
+            result.Password = members.Password;
             db.SaveChanges();
             return RedirectToAction("Index");
         }
