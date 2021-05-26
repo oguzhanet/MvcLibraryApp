@@ -1,0 +1,34 @@
+﻿@model MvcLibraryApp.McvWebUI.Models.Entity.Movements
+@{
+    ViewBag.Title = "Lend";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h2>Kitap Ödünç Verme Sayfası</h2>
+
+<br />
+
+<form class="form-group" method="post">
+    <div>
+        @Html.Label("Kitap Id")
+        @Html.TextBoxFor(x => x.BookId, new { @class = "form-control" })
+        <br />
+        @Html.Label("Üye Id")
+        @Html.TextBoxFor(x => x.MemberId, new { @class = "form-control" })
+        <br />
+        @Html.Label("Personel Id")
+        @Html.TextBoxFor(x => x.EmployeeId, new { @class = "form-control" })
+        @*@Html.DropDownListFor(x => x.Writers.Id, (List<SelectListItem>)ViewBag.writer, new { @class = "form-control" })*@
+        <br />
+        @Html.Label("Kitap Verilme Tarihi")
+        <input type="text" class="form-control" name="DateOfIssue" value="@DateTime.Now.ToShortDateString()"/>
+        <br />
+        @Html.Label("Kitap Geri Alınma Tarihi")
+    <input type="text" class="form-control" name="ReturnDate" value="@DateTime.Now.AddDays(15).ToShortDateString()"/>
+        <br />
+        <button class="btn btn-info">Kitap Ödünç Ver</button>
+    </div>
+</form>
+
+
+

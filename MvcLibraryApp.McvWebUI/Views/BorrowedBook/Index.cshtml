@@ -1,0 +1,54 @@
+﻿@using MvcLibraryApp.McvWebUI.Models.Entity
+@model List<Movements>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h2> Ödünç Kitap İşlemleri Sayfası</h2>
+
+
+@using (Html.BeginForm("Index", "BorrowedBook", FormMethod.Get))
+{
+    <div style="margin-bottom:20px; margin-top:18px;">
+        <table>
+            <tr>
+                <td>
+                    <a href="/BorrowedBook/Lend/" class="btn btn-default" style="background-color:deepskyblue; margin-right:300px;">Ödünç Kitap Ver</a>
+                </td>
+                <td>
+                    <input style="margin-right:100px" type="text" class="form-control" name="books" placeholder="Aranacak kitabı giriniz ve enter yapınız.." />
+                </td>
+                <td>
+                    <input class="btn btn-success" style="margin-left:15px" type="submit" value="Ara" />
+                </td>
+            </tr>
+        </table>
+    </div>
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>İşlem Id</th>
+        <th>Kitabın Adı</th>
+        <th>Üye</th>
+        <th>Personel</th>
+        @*<th>Yayınevi</th>*@
+        <th>Verilme Tarihi</th>
+        <th>Geri Alınma Tarihi</th>
+        <th>İade İşlemi</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.Id</th>
+            <td>@item.Books.BookName</td>
+            <td>@item.Members.MemberName @item.Members.MemberLastName</td>
+            <td>@item.Employees.EmployeeName</td>
+            <td>@Convert.ToDateTime(item.DateOfIssue).ToString("dd/MM/yyyy")</td>
+            <td>@Convert.ToDateTime(item.ReturnDate).ToString("dd/MM/yyyy")</td>
+            <td><a href="/BorrowedBook/Borrow/@item.Id" class="btn btn-warning">Kitabı İade Et</a></td>
+        </tr>
+    }
+</table>
