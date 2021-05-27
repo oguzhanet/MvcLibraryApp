@@ -84,6 +84,8 @@ namespace MvcLibraryApp.McvWebUI.Controllers
                                             }).ToList();
             ViewBag.writer = writers;
 
+            ViewBag.writer = writers;
+
             return View("GetById", result);
         }
 
@@ -94,6 +96,7 @@ namespace MvcLibraryApp.McvWebUI.Controllers
             result.YearOfPrinting = books.YearOfPrinting;
             result.PublishingHouse = books.PublishingHouse;
             result.NumberOfPage = books.NumberOfPage;
+            result.Status = true;
 
             var category = db.Categories.Where(x => x.Id == books.Categories.Id).FirstOrDefault();
             result.CategoryId = category.Id;

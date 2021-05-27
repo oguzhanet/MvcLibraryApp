@@ -11,8 +11,7 @@ namespace MvcLibraryApp.McvWebUI.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Members
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,25 +22,14 @@ namespace MvcLibraryApp.McvWebUI.Models.Entity
         }
     
         public int Id { get; set; }
-        [Required(ErrorMessage ="Üye Adý boþ Olamaz!")]
-        [StringLength(20,ErrorMessage ="En fazla 20 karakter olabilir!")]
         public string MemberName { get; set; }
-        [Required(ErrorMessage = "Üye soyadý boþ Olamaz!")]
-        [StringLength(20, ErrorMessage = "En fazla 20 karakter olabilir!")]
         public string MemberLastName { get; set; }
         public string School { get; set; }
-        [Required(ErrorMessage = "Mail boþ Olamaz!")]
-        [StringLength(20, ErrorMessage = "En fazla 50 karakter olabilir!")]
         public string Mail { get; set; }
         public string Phone { get; set; }
         public string Image { get; set; }
-        [Required(ErrorMessage = "Kullanýcý adý boþ Olamaz!")]
-        [StringLength(20, ErrorMessage = "En fazla 20 karakter olabilir!")]
         public string NickName { get; set; }
-        [Required(ErrorMessage = "Þifre boþ Olamaz!")]
-        [StringLength(20, ErrorMessage = "En fazla 20 karakter olabilir!")]
         public string Password { get; set; }
-        //[StringLength(20, ErrorMessage = "11 karakter olmalýdýr!")]
         public string IdentityNumber { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

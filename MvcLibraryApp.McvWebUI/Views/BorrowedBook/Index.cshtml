@@ -33,7 +33,7 @@
         <th>Kitabın Adı</th>
         <th>Üye</th>
         <th>Personel</th>
-        @*<th>Yayınevi</th>*@
+        <th>Yayınevi</th>
         <th>Verilme Tarihi</th>
         <th>Geri Alınma Tarihi</th>
         <th>İade İşlemi</th>
@@ -46,6 +46,7 @@
             <td>@item.Books.BookName</td>
             <td>@item.Members.MemberName @item.Members.MemberLastName</td>
             <td>@item.Employees.EmployeeName</td>
+            <td>@item.Books.PublishingHouse</td>
             <td>@Convert.ToDateTime(item.DateOfIssue).ToString("dd/MM/yyyy")</td>
             <td>@Convert.ToDateTime(item.ReturnDate).ToString("dd/MM/yyyy")</td>
             <td><a href="/BorrowedBook/Borrow/@item.Id" class="btn btn-warning">Kitabı İade Et</a></td>

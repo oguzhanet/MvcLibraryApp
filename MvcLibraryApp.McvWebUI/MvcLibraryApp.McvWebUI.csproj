@@ -260,6 +260,7 @@
     <Content Include="Views\Member\GetById.cshtml" />
     <Content Include="Views\BorrowedBook\Lend.cshtml" />
     <Content Include="Views\BorrowedBook\Index.cshtml" />
+    <Content Include="Views\BorrowedBook\Borrow.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

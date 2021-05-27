@@ -30,5 +30,11 @@ namespace MvcLibraryApp.McvWebUI.Controllers
             db.SaveChanges();
             return View();
         }
+
+        public ActionResult Borrow(int id)
+        {
+            var result = db.Movements.Find(id);
+            return View("Borrow", result);
+        }
     }
 }
