@@ -1,8 +1,38 @@
-﻿
+﻿@model MvcLibraryApp.McvWebUI.Models.Entity.Movements
 @{
     ViewBag.Title = "Borrow";
     Layout = "~/Views/Shared/_Layout1.cshtml";
 }
 
-<h2>Borrow</h2>
+<br />
+
+@using (Html.BeginForm("Update", "BorrowedBook", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Hareket Id")
+        @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
+        br />
+        @Html.Label("Kitap İsmi")
+        @Html.TextBoxFor(x => x.Books.BookName, new { @class = "form-control" })
+        <br />
+        @Html.Label("Kullanıcı İsmi")
+        @Html.TextBoxFor(x => x.Members.MemberName, new { @class = "form-control" })
+        <br />
+        @Html.Label("Personel İsmi")
+        @Html.TextBoxFor(x => x.Employees.EmployeeName, new { @class = "form-control" })
+        <br />
+        @Html.Label("Verilme Tarihi")
+        @Html.TextBoxFor(x => x.DateOfIssue, "{0:dd.MM.yyyy}", new { @class = "form-control" })
+        <br />
+        @Html.Label("Geri Verilme Tarihi")
+        @Html.TextBoxFor(x => x.ReturnDate, "{0:dd.MM.yyyy}", new { @class = "form-control" })
+        <br />
+        @Html.Label("Üyenin Getirdiği Tarihi")
+        <input type="text" class="form-control" name="MemberReturnDate" value="@DateTime.Now.ToLongDateString()" />
+    </div>
+    <div>
+        <button class="btn btn-default" style="background-color:coral; color:white">İade İşlemini Kaydet</button>
+    </div>
+}
+
 

@@ -57,6 +57,8 @@
           <Property Name="EmployeeId" Type="int" />
           <Property Name="DateOfIssue" Type="smalldatetime" />
           <Property Name="ReturnDate" Type="smalldatetime" />
+          <Property Name="MemberReturnDate" Type="smalldatetime" />
+          <Property Name="Status" Type="bit" />
         </EntityType>
         <EntityType Name="Penalties">
           <Key>
@@ -286,6 +288,8 @@
           <NavigationProperty Name="Employees" Relationship="Self.FK_Movements_Employees" FromRole="Movements" ToRole="Employees" />
           <NavigationProperty Name="Members" Relationship="Self.FK_Movements_Members" FromRole="Movements" ToRole="Members" />
           <NavigationProperty Name="Penalties" Relationship="Self.FK_Penalties_Movements" FromRole="Movements" ToRole="Penalties" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="MemberReturnDate" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="Penalties">
           <Key>
@@ -506,6 +510,8 @@
           <EntitySetMapping Name="Movements">
             <EntityTypeMapping TypeName="LibraryAppDbModel.Movements">
               <MappingFragment StoreEntitySet="Movements">
+                <ScalarProperty Name="MemberReturnDate" ColumnName="MemberReturnDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="BookId" ColumnName="BookId" />
                 <ScalarProperty Name="MemberId" ColumnName="MemberId" />

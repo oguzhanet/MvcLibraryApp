@@ -26,6 +26,8 @@ namespace MvcLibraryApp.McvWebUI.Models.Entity
         public Nullable<int> EmployeeId { get; set; }
         public Nullable<System.DateTime> DateOfIssue { get; set; }
         public Nullable<System.DateTime> ReturnDate { get; set; }
+        public Nullable<bool> Status { get; set; }
+        public Nullable<System.DateTime> MemberReturnDate { get; set; }
     
         public virtual Books Books { get; set; }
         public virtual Employees Employees { get; set; }
