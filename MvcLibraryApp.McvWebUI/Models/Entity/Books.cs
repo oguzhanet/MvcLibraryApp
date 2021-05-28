@@ -28,6 +28,7 @@ namespace MvcLibraryApp.McvWebUI.Models.Entity
         public string NumberOfPage { get; set; }
         public string YearOfPrinting { get; set; }
         public Nullable<bool> Status { get; set; }
+        public string BookImage { get; set; }
     
         public virtual Categories Categories { get; set; }
         public virtual Writers Writers { get; set; }

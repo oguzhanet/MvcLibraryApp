@@ -16,6 +16,7 @@
           <Property Name="PublishingHouse" Type="varchar" MaxLength="50" />
           <Property Name="NumberOfPage" Type="varchar" MaxLength="5" />
           <Property Name="YearOfPrinting" Type="char" MaxLength="4" />
+          <Property Name="BookImage" Type="varchar" MaxLength="250" />
           <Property Name="Status" Type="bit" />
         </EntityType>
         <EntityType Name="Categories">
@@ -240,6 +241,7 @@
           <NavigationProperty Name="Categories" Relationship="Self.FK_Books_Categories" FromRole="Books" ToRole="Categories" />
           <NavigationProperty Name="Writers" Relationship="Self.FK_Books_Writers" FromRole="Books" ToRole="Writers" />
           <NavigationProperty Name="Movements" Relationship="Self.FK_Movements_Books" FromRole="Books" ToRole="Movements" />
+          <Property Name="BookImage" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Categories">
           <Key>
@@ -464,6 +466,7 @@
           <EntitySetMapping Name="Books">
             <EntityTypeMapping TypeName="LibraryAppDbModel.Books">
               <MappingFragment StoreEntitySet="Books">
+                <ScalarProperty Name="BookImage" ColumnName="BookImage" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
                 <ScalarProperty Name="WriterId" ColumnName="WriterId" />
