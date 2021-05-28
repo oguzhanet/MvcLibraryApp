@@ -1,4 +1,5 @@
-﻿
+﻿@using MvcLibraryApp.McvWebUI.Models.Entity
+@model List<Books>
 @{
     Layout = null;
 }
@@ -97,17 +98,19 @@
             <div class="row">
 
                 <!-- Portfolio Item 1 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white">
-                                <i class="fas fa-plus fa-3x"></i>
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-6 col-lg-4">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white">
+                                    <i class="fas fa-plus fa-3x"></i>
+                                </div>
                             </div>
+                            <img class="img-fluid" src="@item.BookImage" alt="">
                         </div>
-                        <img class="img-fluid" src="~/Templates/web/img/droxdeney.jpg" alt="">
                     </div>
-                </div>
-
+                }
             </div>
             <!-- /.row -->
 
@@ -247,7 +250,7 @@
                 <div class="col-lg-4">
                     <h4 class="text-uppercase mb-4">Kütüphane Modülü</h4>
                     <p class="lead mb-0">
-                       Bu proje Mvc5 ile geliştirilmiştir.
+                        Bu proje Mvc5 ile geliştirilmiştir.
                         <a href="http://startbootstrap.com">Start Bootstrap</a>.
                     </p>
                 </div>
