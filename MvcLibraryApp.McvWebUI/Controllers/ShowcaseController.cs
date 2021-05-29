@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MvcLibraryApp.McvWebUI.Models.Entity;
+using MvcLibraryApp.McvWebUI.Models.Classes;
 
 namespace MvcLibraryApp.McvWebUI.Controllers
 {
@@ -11,10 +12,23 @@ namespace MvcLibraryApp.McvWebUI.Controllers
     {
         // GET: Showcase
         LibraryAppDbEntities db = new LibraryAppDbEntities();
+
+        [HttpGet]
         public ActionResult Index()
         {
-            var result = db.Books.ToList();
-            return View(result);
+            BookAndAbout bookAndAbout = new BookAndAbout();
+            bookAndAbout.Books = db.Books.ToList();
+            bookAndAbout.Abouts = db.Abouts.ToList();
+            //var result = db.Books.ToList();
+            return View(bookAndAbout);
+        }
+
+        [HttpPost]
+        public ActionResult Index(Contacts contacts)
+        {
+            db.Contacts.Add(contacts);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

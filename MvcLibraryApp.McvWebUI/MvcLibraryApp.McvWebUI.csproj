@@ -146,10 +146,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Classes\BookAndAbout.cs" />
+    <Compile Include="Models\Entity\Abouts.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Entity\Books.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\Categories.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\Contacts.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\Employees.cs">
@@ -230,6 +237,46 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Templates\web2\css\bootstrap.css" />
+    <Content Include="Templates\web2\css\clndr.css" />
+    <Content Include="Templates\web2\css\jqvmap.css" />
+    <Content Include="Templates\web2\css\nav.css" />
+    <Content Include="Templates\web2\css\style.css" />
+    <Content Include="Templates\web2\images\ar2.png" />
+    <Content Include="Templates\web2\images\arrows.png" />
+    <Content Include="Templates\web2\images\avatar.jpg" />
+    <Content Include="Templates\web2\images\avatar1.jpg" />
+    <Content Include="Templates\web2\images\avatar2.jpg" />
+    <Content Include="Templates\web2\images\img-sprite.png" />
+    <Content Include="Templates\web2\images\into.png" />
+    <Content Include="Templates\web2\images\into1.png" />
+    <Content Include="Templates\web2\images\logo.png" />
+    <Content Include="Templates\web2\images\pp.jpg" />
+    <Content Include="Templates\web2\images\pp0.jpg" />
+    <Content Include="Templates\web2\images\pp01.jpg" />
+    <Content Include="Templates\web2\images\settings.png" />
+    <Content Include="Templates\web2\images\tick-mark.png" />
+    <Content Include="Templates\web2\index.html" />
+    <Content Include="Templates\web2\js\Chart1.js" />
+    <Content Include="Templates\web2\js\clndr.js" />
+    <Content Include="Templates\web2\js\easyResponsiveTabs.js" />
+    <Content Include="Templates\web2\js\jquery.easydropdown.js" />
+    <Content Include="Templates\web2\js\jquery.min.js" />
+    <Content Include="Templates\web2\js\jquery.nicescroll.js" />
+    <Content Include="Templates\web2\js\jquery.vmap.js" />
+    <Content Include="Templates\web2\js\jquery.vmap.sampledata.js" />
+    <Content Include="Templates\web2\js\jquery.vmap.world.js" />
+    <Content Include="Templates\web2\js\main.js" />
+    <Content Include="Templates\web2\js\moment-2.2.1.js" />
+    <Content Include="Templates\web2\js\site.js" />
+    <Content Include="Templates\web2\js\underscore-min.js" />
+    <Content Include="Templates\web2\resimler\book1.jpg" />
+    <Content Include="Templates\web2\resimler\book2.jpg" />
+    <Content Include="Templates\web2\resimler\book3.jpg" />
+    <Content Include="Templates\web2\resimler\book4.jpg" />
+    <Content Include="Templates\web2\resimler\book5.jpg" />
+    <Content Include="Templates\web2\resimler\img1.jpg" />
+    <Content Include="Templates\web2\w3layouts-License.txt" />
     <Content Include="Templates\web\css\freelancer.css" />
     <Content Include="Templates\web\css\freelancer.min.css" />
     <Content Include="Templates\web\gulpfile.js" />

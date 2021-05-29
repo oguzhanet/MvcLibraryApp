@@ -34,5 +34,7 @@ namespace MvcLibraryApp.McvWebUI.Models.Entity
         public virtual DbSet<Safes> Safes { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Writers> Writers { get; set; }
+        public virtual DbSet<Abouts> Abouts { get; set; }
+        public virtual DbSet<Contacts> Contacts { get; set; }
     }
 }
