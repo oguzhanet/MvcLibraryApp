@@ -11,9 +11,11 @@
     <div>
         @Html.Label("Yazar Adı")
         @Html.TextBoxFor(x => x.WriterName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.WriterName, "", new { @style = "color:red" })
         <br />
         @Html.Label("Yazar Soyadı")
         @Html.TextBoxFor(x => x.WriterLastName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.WriterLastName, "", new { @style = "color:red" })
         <br />
         @Html.Label("Detay")
         @Html.TextAreaFor(x => x.Detail, new { @class = "form-control" })

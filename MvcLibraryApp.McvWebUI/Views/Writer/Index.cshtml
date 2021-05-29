@@ -5,11 +5,21 @@
     Layout = "~/Views/Shared/_Layout1.cshtml";
 }
 
-<h2>Yazarlar</h2>
-<a href="/Writer/Add/" class="btn btn-default" style="background-color:deepskyblue; margin-block-end:15px;">Yeni Yazar Ekle</a>
+@*<h2>Yazarlar</h2>
+<a href="/Writer/Add/" class="btn btn-default" style="background-color:deepskyblue; margin-block-end:15px;">Yeni Yazar Ekle</a>*@
+<div>
+    <div class="row gx-5">
+        <div class="col" style="margin-top:10px; margin-bottom:5px;">
+            <h2>Yazarlar</h2>
+        </div>
+        <div class="col-7" style="margin-top:15px; margin-bottom:5px; margin-right:15px;">
+            <a href="/Writer/Add/" class="btn btn-default" style="background-color:deepskyblue; margin-block-end:15px;">Yeni Yazar Ekleyin..</a>
+        </div>
+    </div>
+</div>
 
-<table class="table table-bordered" >
-    <tr>
+<table class="table table-striped">
+    <tr style="background-color:rgb(252,178,22)">
         <th>Id</th>
         <th>Yazar Adı</th>
         <th>Yazar Soyadı</th>
@@ -24,10 +34,12 @@
             <td>@writer.WriterName</td>
             <td>@writer.WriterLastName</td>
             <td>@writer.Detail</td>
-            <td>@Html.ActionLink("Sil","Delete",new {id=writer.Id },
-               new { @class="btn btn-danger", onclick="return confirm('Sil İstiyor Musunuz?')"})</td>
-            <td><a href="/Writer/GetById/@writer.Id" class="btn btn-warning">Güncelle</a></td>
-        </tr>
-    }
+            <td>
+                @Html.ActionLink("Sil", "Delete", new { id = writer.Id },
+           new { @class = "btn btn-danger", onclick = "return confirm('Sil İstiyor Musunuz?')" })
+        </td>
+        <td><a href="/Writer/GetById/@writer.Id" class="btn btn-warning">Güncelle</a></td>
+    </tr>
+}
 </table>
 

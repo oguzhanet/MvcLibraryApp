@@ -11,7 +11,8 @@ namespace MvcLibraryApp.McvWebUI.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Writers
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,7 +22,11 @@ namespace MvcLibraryApp.McvWebUI.Models.Entity
         }
     
         public int Id { get; set; }
+        [Required(ErrorMessage ="Yazar Adý Boþ Olamaz!")]
+        [StringLength(30,ErrorMessage ="Yazar Adý 2 ile 30 karakter aralýðýnda olmalýdýr!",MinimumLength =2)]
         public string WriterName { get; set; }
+        [Required(ErrorMessage = "Yazar Soyadý Boþ Olamaz!")]
+        [StringLength(30, ErrorMessage = "Yazar Soyadý 2 ile 30 karakter aralýðýnda olmalýdýr!", MinimumLength = 2)]
         public string WriterLastName { get; set; }
         public string Detail { get; set; }
     

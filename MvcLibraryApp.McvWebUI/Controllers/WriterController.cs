@@ -26,6 +26,10 @@ namespace MvcLibraryApp.McvWebUI.Controllers
         [HttpPost]
         public ActionResult Add(Writers writers)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("Add");
+            }
             db.Writers.Add(writers);
             db.SaveChanges();
             return RedirectToAction("Index");
