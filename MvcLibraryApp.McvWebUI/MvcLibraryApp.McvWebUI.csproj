@@ -278,6 +278,13 @@
     <Content Include="Templates\web2\resimler\book5.jpg" />
     <Content Include="Templates\web2\resimler\img1.jpg" />
     <Content Include="Templates\web2\w3layouts-License.txt" />
+    <Content Include="Templates\webhava\css\style.css" />
+    <Content Include="Templates\webhava\images\bg.jpg" />
+    <Content Include="Templates\webhava\images\img1.jpg" />
+    <Content Include="Templates\webhava\index.html" />
+    <Content Include="Templates\webhava\js\jquery-2.1.4.min.js" />
+    <Content Include="Templates\webhava\js\skycons.js" />
+    <Content Include="Templates\webhava\w3layouts-License.txt" />
     <Content Include="Templates\web\css\freelancer.css" />
     <Content Include="Templates\web\css\freelancer.min.css" />
     <Content Include="Templates\web\gulpfile.js" />
@@ -400,6 +407,9 @@
     <Content Include="Templates\web\vendor\jquery\jquery.slim.min.map" />
     <Content Include="Views\Showcase\Index.cshtml" />
     <Content Include="Views\Statistics\Index.cshtml" />
+    <Content Include="Views\Statistics\Air.cshtml" />
+    <Content Include="Views\Statistics\AirCard.cshtml" />
+    <Content Include="Views\Statistics\Gallery.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
