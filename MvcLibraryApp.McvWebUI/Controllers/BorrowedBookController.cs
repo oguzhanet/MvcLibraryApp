@@ -31,9 +31,13 @@ namespace MvcLibraryApp.McvWebUI.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Borrow(int id)
+        public ActionResult Borrow(Movements movements)
         {
-            var result = db.Movements.Find(id);
+            var result = db.Movements.Find(movements.Id);
+            DateTime result1 = DateTime.Parse(result.ReturnDate.ToString());
+            DateTime result2 = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            TimeSpan result3 = result2 - result1;
+            ViewBag.result3 = result3.TotalDays;
             return View("Borrow", result);
         }
 

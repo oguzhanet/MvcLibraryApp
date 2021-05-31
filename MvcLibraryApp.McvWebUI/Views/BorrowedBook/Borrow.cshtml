@@ -29,6 +29,9 @@
         <br />
         @Html.Label("Üyenin Getirdiği Tarihi")
         <input type="text" class="form-control" name="MemberReturnDate" value="@DateTime.Now.ToLongDateString()" />
+        <br />
+        @Html.Label("Geç Getirilen Gün Sayısı")
+        <input type="text" class="form-control" id="BorrowBook" value="@ViewBag.result3" />
     </div>
     <div>
         <button class="btn btn-default" style="background-color:coral; color:white">İade İşlemini Kaydet</button>
