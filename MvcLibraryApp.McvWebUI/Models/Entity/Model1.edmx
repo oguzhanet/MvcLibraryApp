@@ -200,6 +200,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="EnFazlaKitapAlanUye" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="EnFazlaKİtapVerenPersonel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="EnFazlaKitapYayınevi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="EnFazlaKitapYazar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="EnFazlaOkunanKitap" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="LibraryAppDbModelStoreContainer">
           <EntitySet Name="Abouts" EntityType="Self.Abouts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Books" EntityType="Self.Books" Schema="dbo" store:Type="Tables" />
@@ -477,6 +482,11 @@
           </AssociationSet>
           <EntitySet Name="Abouts" EntityType="LibraryAppDbModel.Abouts" />
           <EntitySet Name="Contacts" EntityType="LibraryAppDbModel.Contacts" />
+          <FunctionImport Name="EnFazlaKitapYazar" ReturnType="Collection(String)" />
+          <FunctionImport Name="EnFazlaKitapYayınevi" ReturnType="Collection(String)" />
+          <FunctionImport Name="EnFazlaKitapAlanUye" ReturnType="Collection(String)" />
+          <FunctionImport Name="EnFazlaKİtapVerenPersonel" ReturnType="Collection(String)" />
+          <FunctionImport Name="EnFazlaOkunanKitap" ReturnType="Collection(String)" />
         </EntityContainer>
         <EntityType Name="Abouts">
           <Key>
@@ -623,6 +633,11 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="EnFazlaKitapYazar" FunctionName="LibraryAppDbModel.Store.EnFazlaKitapYazar" />
+          <FunctionImportMapping FunctionImportName="EnFazlaKitapYayınevi" FunctionName="LibraryAppDbModel.Store.EnFazlaKitapYayınevi" />
+          <FunctionImportMapping FunctionImportName="EnFazlaKitapAlanUye" FunctionName="LibraryAppDbModel.Store.EnFazlaKitapAlanUye" />
+          <FunctionImportMapping FunctionImportName="EnFazlaKİtapVerenPersonel" FunctionName="LibraryAppDbModel.Store.EnFazlaKİtapVerenPersonel" />
+          <FunctionImportMapping FunctionImportName="EnFazlaOkunanKitap" FunctionName="LibraryAppDbModel.Store.EnFazlaOkunanKitap" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
