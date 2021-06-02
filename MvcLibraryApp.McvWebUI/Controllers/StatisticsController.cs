@@ -87,6 +87,7 @@ namespace MvcLibraryApp.McvWebUI.Controllers
             var result9 = db.EnFazlaKitapYayınevi().FirstOrDefault();
             ViewBag.result9 = result9;
 
+            //Sql de Procedure oluşturup kullandım. 
             var result10 = db.EnFazlaKİtapVerenPersonel().FirstOrDefault();
             ViewBag.result10 = result10;
 
