@@ -361,10 +361,6 @@
     <Content Include="Templates\web3\js\xy.js" />
     <Content Include="Templates\web3\main-page.html" />
     <Content Include="Templates\web3\maps.html" />
-    <Content Include="Templates\web3\signin.html" />
-    <Content Include="Templates\web3\signup.html" />
-    <Content Include="Templates\web3\table.html" />
-    <Content Include="Templates\web3\typo.html" />
     <Content Include="Templates\web3\validation.html" />
     <Content Include="Templates\web3\w3layouts-License.txt" />
     <Content Include="Templates\webhava\css\style.css" />
