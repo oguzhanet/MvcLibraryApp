@@ -16,7 +16,9 @@ namespace MvcLibraryApp.McvWebUI.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            return View();
+            var result = (string)Session["Mail"];
+            var member = db.Members.FirstOrDefault(x => x.Mail == result);
+            return View(member);
         }
 
         [HttpPost]
@@ -24,6 +26,12 @@ namespace MvcLibraryApp.McvWebUI.Controllers
         {
             var result = (string)Session["Mail"];
             var member = db.Members.FirstOrDefault(x => x.Mail == result);
+            member.MemberName = members.MemberName;
+            member.MemberLastName = members.MemberLastName;
+            member.NickName = members.NickName;
+            member.Phone = members.Phone;
+            member.School = members.School;
+            member.Image = members.Image;
             member.Password = members.Password;
             db.SaveChanges();
             return View();

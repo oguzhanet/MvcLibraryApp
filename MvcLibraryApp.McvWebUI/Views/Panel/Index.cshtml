@@ -1,4 +1,4 @@
-﻿
+﻿@model MvcLibraryApp.McvWebUI.Models.Entity.Members
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutPanel.cshtml";
@@ -7,51 +7,71 @@
 <h2>Kütüphane Üye Profil Bilgileri</h2>
 @using (Html.BeginForm("Index", "Panel", FormMethod.Post))
 {
-    <table class="table table-hover" style="margin-bottom:20px">
-        <tr>
-            <td>
-                <b>İsim:</b> @TempData["Numara"].ToString()
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <b>Mail Adresi:</b> @HttpContext.Current.User.Identity.Name
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <b>İsim:</b> @TempData["İsim"].ToString()
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <b>Soyisim:</b> @TempData["Soyİsim"].ToString()
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <b>Kullanıcı Adı:</b> @TempData["Kullanıcı"].ToString()
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <b>Şifre:</b> <input type="text" class="form-control" name="Password" value="@TempData["Şifre"].ToString()" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <b>Eğitim Bilgisi:</b> @TempData["Eğitim"].ToString()
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <b>Telefon:</b> @TempData["Telefon"].ToString()
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <button class="btn btn-warning">Şifre Güncelle</button>
-            </td>
-        </tr>
-    </table>
+<table class="table table-hover" style="margin-bottom:20px">
+    @*<tr>
+        <td>
+            @Html.Label("Kullanıcı Numarası")
+            @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
+        </td>
+    </tr>*@
+    <tr>
+        <td>
+            <b>Mail Adresi:</b> @HttpContext.Current.User.Identity.Name
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b> @Html.Label("İsim")</b>
+            @Html.TextBoxFor(x => x.MemberName, new { @class = "form-control" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>  @Html.Label("Soyisim")</b>
+            @Html.TextBoxFor(x => x.MemberLastName, new { @class = "form-control" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b> @Html.Label("Kullanıcı Adı")</b>
+            @Html.TextBoxFor(x => x.NickName, new { @class = "form-control" })
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b> @Html.Label("Şifre")</b>
+            @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b> @Html.Label("Telefon")</b>
+            @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b> @Html.Label("Eğitim Bilgisi")</b>
+            @Html.TextBoxFor(x => x.School, new { @class = "form-control" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>  @Html.Label("Fotograf Linki")</b>
+            @Html.TextBoxFor(x => x.Image, new { @class = "form-control" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button class="btn btn-warning">Şifre Güncelle</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="hidden" name="Id" />
+        </td>
+    </tr>
+</table>
 }
