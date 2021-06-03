@@ -4,5 +4,53 @@
     Layout = "~/Views/Shared/_LayoutPanel.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Kütüphane Üye Profil Bilgileri</h2>
+
+<table class="table table-hover" style="margin-bottom:20px">
+    <tr>
+        <td>
+            <b>İsim:</b> @Session["Numara"].ToString()
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Mail Adresi:</b> @HttpContext.Current.User.Identity.Name
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>İsim:</b> @Session["İsim"].ToString()
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Soyisim:</b> @Session["Soyİsim"].ToString()
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Kullanıcı Adı:</b> @Session["Kullanıcı"].ToString()
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Şifre:</b> <input type="text" class="form-control" value="@Session["Şifre"].ToString()" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Eğitim Bilgisi:</b> @Session["Eğitim"].ToString()
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Telefon:</b> @Session["Telefon"].ToString()
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button class="btn btn-warning">Şifre Güncelle</button>
+        </td>
+    </tr>
+</table>
 
