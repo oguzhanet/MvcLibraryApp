@@ -254,16 +254,6 @@
     <Content Include="Templates\startpanel\index.html" />
     <Content Include="Templates\startpanel\js\datatables-simple-demo.js" />
     <Content Include="Templates\startpanel\js\scripts.js" />
-    <Content Include="Templates\startpanel\layout-sidenav-light.html" />
-    <Content Include="Templates\startpanel\layout-static.html" />
-    <Content Include="Templates\startpanel\login.html" />
-    <Content Include="Templates\startpanel\password.html" />
-    <Content Include="Templates\startpanel\register.html" />
-    <Content Include="Templates\startpanel\tables.html" />
-    <Content Include="Templates\start\assets\favicon.ico" />
-    <Content Include="Templates\start\css\styles.css" />
-    <Content Include="Templates\start\index.html" />
-    <Content Include="Templates\start\js\scripts.js" />
     <Content Include="Templates\web2\css\bootstrap.css" />
     <Content Include="Templates\web2\css\clndr.css" />
     <Content Include="Templates\web2\css\jqvmap.css" />

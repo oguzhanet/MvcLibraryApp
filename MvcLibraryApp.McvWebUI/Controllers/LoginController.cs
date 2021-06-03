@@ -26,13 +26,14 @@ namespace MvcLibraryApp.McvWebUI.Controllers
             if (result !=null)
             {
                 FormsAuthentication.SetAuthCookie(result.Mail, false);
-                Session["Numara"] = result.Id.ToString();
-                Session["İsim"] = result.MemberName.ToString();
-                Session["Soyİsim"] = result.MemberLastName.ToString();
-                Session["Kullanıcı"] = result.NickName.ToString();
-                Session["Şifre"] = result.Password.ToString();
-                Session["Eğitim"] = result.School.ToString();
-                Session["Telefon"] = result.Phone.ToString();
+                Session["Mail"] = result.Mail.ToString();
+                TempData["Numara"] = result.Id.ToString();
+                TempData["İsim"] = result.MemberName.ToString();
+                TempData["Soyİsim"] = result.MemberLastName.ToString();
+                TempData["Kullanıcı"] = result.NickName.ToString();
+                TempData["Şifre"] = result.Password.ToString();
+                TempData["Eğitim"] = result.School.ToString();
+                TempData["Telefon"] = result.Phone.ToString();
                 return RedirectToAction("Index", "Panel");
             }
             return View();
