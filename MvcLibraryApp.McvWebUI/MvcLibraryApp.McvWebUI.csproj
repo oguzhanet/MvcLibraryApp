@@ -639,6 +639,7 @@
     <Content Include="Templates\ContactFrom\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="Templates\ContactFrom\vendor\bootstrap\css\bootstrap.min.css.map" />
     <Content Include="Views\Message\SerderMessage.cshtml" />
+    <Content Include="Views\Panel\MyBook.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -36,5 +36,13 @@ namespace MvcLibraryApp.McvWebUI.Controllers
             db.SaveChanges();
             return View();
         }
+
+        public ActionResult MyBook()
+        {
+            var result = (string)Session["Mail"];
+            var result1 = db.Members.Where(x => x.Mail == result.ToString()).Select(c => c.Id).FirstOrDefault();
+            var result2 = db.Movements.Where(x => x.MemberId == result1).ToList();
+            return View(result2);
+        }
     }
 }
