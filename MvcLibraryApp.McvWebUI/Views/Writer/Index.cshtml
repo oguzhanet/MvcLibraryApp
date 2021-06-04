@@ -26,20 +26,22 @@
         <th>Detay</th>
         <th>Silme İşlemi</th>
         <th>Güncelleme İşlemi</th>
+        <th>Yazarın Kitapları</th>
     </tr>
     @foreach (var writer in Model)
     {
-        <tr>
-            <th>@writer.Id</th>
-            <td>@writer.WriterName</td>
-            <td>@writer.WriterLastName</td>
-            <td>@writer.Detail</td>
-            <td>
-                @Html.ActionLink("Sil", "Delete", new { id = writer.Id },
-           new { @class = "btn btn-danger", onclick = "return confirm('Sil İstiyor Musunuz?')" })
-        </td>
-        <td><a href="/Writer/GetById/@writer.Id" class="btn btn-warning">Güncelle</a></td>
-    </tr>
+<tr>
+    <th>@writer.Id</th>
+    <td>@writer.WriterName</td>
+    <td>@writer.WriterLastName</td>
+    <td>@writer.Detail</td>
+    <td>
+        @Html.ActionLink("Sil", "Delete", new { id = writer.Id },
+   new { @class = "btn btn-danger", onclick = "return confirm('Sil İstiyor Musunuz?')" })
+    </td>
+    <td><a href="/Writer/GetById/@writer.Id" class="btn btn-warning">Güncelle</a></td>
+    <td><a href="/Writer/WriterBook/@writer.Id" class="btn btn-success">Kitaplar</a></td>
+</tr>
 }
 </table>
 

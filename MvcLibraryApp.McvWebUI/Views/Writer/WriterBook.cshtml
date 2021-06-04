@@ -1,0 +1,27 @@
+﻿@using MvcLibraryApp.McvWebUI.Models.Entity
+@model List<Books>
+@{
+    ViewBag.Title = "WriterBook";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h2>WriterBook</h2>
+<br />
+<table class="table table-striped">
+    <tr style="background-color:rgb(252,178,22)">
+        <th>Kitap Numarası</th>
+        <th>Kitap Adı</th>
+        <th>Yayınevi</th>
+        <th>Kategori</th>
+    </tr>
+    @foreach (var book in Model)
+    {
+        <tr>
+            <th>@book.Id</th>
+            <td>@book.BookName</td>
+            <td>@book.PublishingHouse</td>
+            <td>@book.Categories.CategoryName</td>
+        </tr>
+    }
+</table>
+

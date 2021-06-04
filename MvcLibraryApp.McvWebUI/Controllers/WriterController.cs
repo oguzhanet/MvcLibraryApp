@@ -58,5 +58,11 @@ namespace MvcLibraryApp.McvWebUI.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult WriterBook(int id)
+        {
+            var result = db.Books.Where(x => x.WriterId == id).ToList();
+            return View(result);
+        }
     }
 }

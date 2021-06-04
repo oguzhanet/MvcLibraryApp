@@ -13,7 +13,7 @@ namespace MvcLibraryApp.McvWebUI.Controllers
         LibraryAppDbEntities db = new LibraryAppDbEntities();
         public ActionResult Index()
         {
-            var result = db.Categories.ToList();
+            var result = db.Categories.Where(x=>x.Status==true).ToList();
             return View(result);
         }
 
@@ -34,7 +34,8 @@ namespace MvcLibraryApp.McvWebUI.Controllers
         public ActionResult Delete(int id)
         {
             var result = db.Categories.Find(id);
-            db.Categories.Remove(result);
+            //db.Categories.Remove(result);
+            result.Status = false;
             db.SaveChanges();
             return RedirectToAction("Index");
         }
