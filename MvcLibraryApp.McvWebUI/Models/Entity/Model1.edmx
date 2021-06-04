@@ -65,6 +65,17 @@
           <Property Name="Password" Type="varchar" MaxLength="20" />
           <Property Name="IdentityNumber" Type="varchar" MaxLength="11" />
         </EntityType>
+        <EntityType Name="Messages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sender" Type="varchar" MaxLength="50" />
+          <Property Name="Receiver" Type="varchar" MaxLength="50" />
+          <Property Name="Subject" Type="varchar" MaxLength="50" />
+          <Property Name="Message" Type="varchar" MaxLength="500" />
+          <Property Name="Date" Type="smalldatetime" />
+        </EntityType>
         <EntityType Name="Movements">
           <Key>
             <PropertyRef Name="Id" />
@@ -212,6 +223,7 @@
           <EntitySet Name="Contacts" EntityType="Self.Contacts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Members" EntityType="Self.Members" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Messages" EntityType="Self.Messages" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Movements" EntityType="Self.Movements" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Penalties" EntityType="Self.Penalties" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Safes" EntityType="Self.Safes" Schema="dbo" store:Type="Tables" />
@@ -487,6 +499,7 @@
           <FunctionImport Name="EnFazlaKitapAlanUye" ReturnType="Collection(String)" />
           <FunctionImport Name="EnFazlaKİtapVerenPersonel" ReturnType="Collection(String)" />
           <FunctionImport Name="EnFazlaOkunanKitap" ReturnType="Collection(String)" />
+          <EntitySet Name="Messages" EntityType="LibraryAppDbModel.Messages" />
         </EntityContainer>
         <EntityType Name="Abouts">
           <Key>
@@ -504,6 +517,17 @@
           <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Subject" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Message" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Messages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Receiver" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Subject" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Message" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -638,6 +662,18 @@
           <FunctionImportMapping FunctionImportName="EnFazlaKitapAlanUye" FunctionName="LibraryAppDbModel.Store.EnFazlaKitapAlanUye" />
           <FunctionImportMapping FunctionImportName="EnFazlaKİtapVerenPersonel" FunctionName="LibraryAppDbModel.Store.EnFazlaKİtapVerenPersonel" />
           <FunctionImportMapping FunctionImportName="EnFazlaOkunanKitap" FunctionName="LibraryAppDbModel.Store.EnFazlaOkunanKitap" />
+          <EntitySetMapping Name="Messages">
+            <EntityTypeMapping TypeName="LibraryAppDbModel.Messages">
+              <MappingFragment StoreEntitySet="Messages">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Receiver" ColumnName="Receiver" />
+                <ScalarProperty Name="Sender" ColumnName="Sender" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

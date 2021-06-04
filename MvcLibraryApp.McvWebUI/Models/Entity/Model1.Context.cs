@@ -38,6 +38,7 @@ namespace MvcLibraryApp.McvWebUI.Models.Entity
         public virtual DbSet<Writers> Writers { get; set; }
         public virtual DbSet<Abouts> Abouts { get; set; }
         public virtual DbSet<Contacts> Contacts { get; set; }
+        public virtual DbSet<Messages> Messages { get; set; }
     
         public virtual ObjectResult<string> EnFazlaKitapYazar()
         {
