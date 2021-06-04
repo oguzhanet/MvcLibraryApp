@@ -18,9 +18,28 @@ namespace MvcLibraryApp.McvWebUI.Controllers
             return View(result);
         }
 
+        public ActionResult SerderMessage()
+        {
+            var memberMail = (string)Session["Mail"].ToString();
+            var result = db.Messages.Where(x => x.Sender == memberMail.ToString()).ToList();
+            return View(result);
+        }
+
+        [HttpGet]
         public ActionResult NewMessage()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult NewMessage(Messages messages)
+        {
+            var memberMail = (string)Session["Mail"].ToString();
+            messages.Sender = memberMail.ToString();
+            messages.Date = DateTime.Parse(DateTime.Now.ToShortDateString());
+            db.Messages.Add(messages);
+            db.SaveChanges();
+            return RedirectToAction("SerderMessage");
         }
     }
 }

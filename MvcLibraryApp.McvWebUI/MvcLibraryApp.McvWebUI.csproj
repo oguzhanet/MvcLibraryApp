@@ -638,6 +638,7 @@
     <Content Include="Templates\ContactFrom\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
     <Content Include="Templates\ContactFrom\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="Templates\ContactFrom\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Views\Message\SerderMessage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

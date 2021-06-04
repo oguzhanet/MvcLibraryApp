@@ -1,4 +1,4 @@
-﻿
+﻿@model MvcLibraryApp.McvWebUI.Models.Entity.Messages
 @{
     ViewBag.Title = "NewMessage";
     Layout = "~/Views/Shared/_LayoutPanel.cshtml";
@@ -37,15 +37,16 @@
                 <img src="~/Templates/ContactFrom/images/img-01.png" alt="IMG">
             </div>
 
-            <form class="contact1-form validate-form">
+            @using (Html.BeginForm("NewMessage", "Message", FormMethod.Post))
+            {
                 <span class="contact1-form-title">
                     Yeni Mesajınız
                 </span>
 
                 @*<div class="wrap-input1 validate-input" data-validate="Name is required">
-                    <input class="input1" type="text" name="name" placeholder="Alıcı Mail Adresi">
-                    <span class="shadow-input1"></span>
-                </div>*@
+                        <input class="input1" type="text" name="name" placeholder="Alıcı Mail Adresi">
+                        <span class="shadow-input1"></span>
+                    </div>*@
 
                 <div class="wrap-input1 validate-input" data-validate="Valid email is required: ex@abc.xyz">
                     <input class="input1" type="text" name="Receiver" placeholder="Alıcı Mail Adresi">
@@ -70,7 +71,7 @@
                         </span>
                     </button>
                 </div>
-            </form>
+            }
         </div>
     </div>
 
@@ -87,19 +88,19 @@
     <!--===============================================================================================-->
     <script src="~/Templates/ContactFrom/vendor/tilt/tilt.jquery.min.js"></script>
     <script>
-		$('.js-tilt').tilt({
-			scale: 1.1
-		})
+        $('.js-tilt').tilt({
+            scale: 1.1
+        })
     </script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
     <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'UA-23581568-13');
+        gtag('config', 'UA-23581568-13');
     </script>
 
     <!--===============================================================================================-->

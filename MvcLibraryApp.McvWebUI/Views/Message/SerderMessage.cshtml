@@ -1,15 +1,15 @@
 ﻿@using MvcLibraryApp.McvWebUI.Models.Entity
 @model List<Messages>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "SerderMessage";
     Layout = "~/Views/Shared/_LayoutPanel.cshtml";
 }
 
-<h2>Gelen Mesajlar Sayfası</h2>
+<h2>Gönderilen Mesajlar Sayfası</h2>
 
 <table class="table table-bordered">
     <tr>
-        <th>Gönderen</th>
+        <th>Alıcı</th>
         <th>Konu</th>
         <th>Mesaj</th>
         <th>İşlem Tarihi</th>
@@ -17,10 +17,11 @@
     @foreach (var item in Model)
     {
         <tr>
-            <td>@item.Sender</td>
+            <td>@item.Receiver</td>
             <td>@item.Subject</td>
             <td>@item.Message</td>
             <td>@item.Date</td>
         </tr>
     }
 </table>
+
