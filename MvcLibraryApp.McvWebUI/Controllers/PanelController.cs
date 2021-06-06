@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using MvcLibraryApp.McvWebUI.Models.Entity;
 
 namespace MvcLibraryApp.McvWebUI.Controllers
@@ -43,6 +44,12 @@ namespace MvcLibraryApp.McvWebUI.Controllers
             var result1 = db.Members.Where(x => x.Mail == result.ToString()).Select(c => c.Id).FirstOrDefault();
             var result2 = db.Movements.Where(x => x.MemberId == result1).ToList();
             return View(result2);
+        }
+
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Login");
         }
     }
 }
