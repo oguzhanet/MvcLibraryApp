@@ -1,0 +1,20 @@
+﻿@model MvcLibraryApp.McvWebUI.Models.Entity.Announcements
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h3>Duyuru Ekleme Sayfası</h3>
+<br />
+<form class="form-group" method="post">
+    <div>
+        @Html.Label("Duyuru Başlığı")
+        @Html.TextBoxFor(x => x.AnnouncementCategory, new { @class = "form-control" })
+        <br />
+        @Html.Label("Duyuru İçeriği")
+        @Html.TextBoxFor(x => x.AnnouncementContent, new { @class = "form-control" })      
+        <br />
+        <button class="btn btn-info">Duyuru Ekle</button>
+    </div>
+</form>
+

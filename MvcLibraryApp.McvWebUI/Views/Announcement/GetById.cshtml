@@ -1,0 +1,27 @@
+﻿@model MvcLibraryApp.McvWebUI.Models.Entity.Announcements
+@{
+    ViewBag.Title = "GetById";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+
+<br />
+
+@using (Html.BeginForm("Update", "Announcement", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Duyuru Id")
+        @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
+        <br />
+        @Html.Label("Duyuru Başlığı")
+        @Html.TextBoxFor(x => x.AnnouncementCategory, new { @class = "form-control" })
+        <br />
+        @Html.Label("Duyuru İçeriği")
+        @Html.TextBoxFor(x => x.AnnouncementContent, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-default" style="background-color:coral; color:white">Güncelle</button>
+    </div>
+}
+
+

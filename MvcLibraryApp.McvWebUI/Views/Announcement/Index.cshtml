@@ -1,0 +1,33 @@
+﻿@using MvcLibraryApp.McvWebUI.Models.Entity
+@model List<Announcements>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h2>Duyurular</h2>
+<a href="/Announcement/Add/" class="btn btn-default" style="background-color:deepskyblue; color:white; margin-block-end:15px;">Yeni Duyuru Ekle</a>
+
+<table class="table table-bordered container">
+    <tr>
+        <th>Duyuru No</th>
+        <th>Duyuru Başlığı</th>
+        <th>Tarih</th>
+        <th>Silme İşlemi</th>
+        <th>Güncelleme İşlemi</th>
+        <th>İçerik</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.Id</th>
+            <td>@item.AnnouncementCategory</td>
+            <td>@Convert.ToDateTime(item.Date).ToString("dd/MMMM/yyyy")</td>
+            <td><a href="/Announcement/Delete/@item.Id" class="btn btn-danger"> Sil </a></td>
+            <td><a href="/Announcement/GetById/@item.Id" class="btn btn-warning"> Güncelle </a></td>
+            <td><a href="/Announcement/Detail/@item.Id" class="btn btn-default" style="background-color:dodgerblue; color:white"> İçerik </a></td>
+        </tr>
+    }
+</table>
+
+

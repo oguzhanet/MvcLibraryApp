@@ -1,0 +1,24 @@
+﻿@using MvcLibraryApp.McvWebUI.Models.Entity
+@model List<Announcements>
+@{
+    ViewBag.Title = "MemberPage";
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";
+}
+
+<table class="table table-bordered container">
+    <tr>
+        <th>Duyuru Başlığı</th>
+        <th>Tarih</th>
+        <th>İçerik</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.AnnouncementCategory</td>
+            <td>@Convert.ToDateTime(item.Date).ToString("dd/MMMM/yyyy")</td>
+            <td><a href="/Announcement/MemberDetail/@item.Id" class="btn btn-default" style="background-color:dodgerblue; color:white"> İçerik </a></td>
+        </tr>
+    }
+</table>
+
+
