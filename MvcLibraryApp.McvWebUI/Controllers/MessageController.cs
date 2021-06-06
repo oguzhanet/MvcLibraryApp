@@ -14,7 +14,7 @@ namespace MvcLibraryApp.McvWebUI.Controllers
         public ActionResult Index()
         {
             var memberMail = (string)Session["Mail"].ToString();
-            var result = db.Messages.Where(x=>x.Receiver==memberMail.ToString()).ToList();
+            var result = db.Messages.Where(x => x.Receiver == memberMail.ToString()).ToList();
             return View(result);
         }
 

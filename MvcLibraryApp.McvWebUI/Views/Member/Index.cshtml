@@ -8,7 +8,7 @@
 }
 
 <h2>Üyeler</h2>
-<a href="/Member/Add/" class="btn btn-default" style="background-color:deepskyblue; margin-block-end:15px;">Yeni Üye Ekle</a>
+<a href="/Member/Add/" class="btn btn-default" style="background-color:deepskyblue; color:white; margin-block-end:15px;">Yeni Üye Ekle</a>
 
 <table class="table table-bordered container">
     <tr>
@@ -22,6 +22,7 @@
         <th>Şifresi</th>
         <th>Silme İşlemi</th>
         <th>Güncelleme İşlemi</th>
+        <th>Kitap Geçmişi</th>
     </tr>
     @foreach (var member in Model)
     {
@@ -36,6 +37,7 @@
             <td>@member.Password</td>
             <td><a href="/Member/Delete/@member.Id" class="btn btn-danger">Sil</a></td>
             <td><a href="/Member/GetById/@member.Id" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/Member/MemberBook/@member.Id" class="btn btn-default" style="background-color:dodgerblue; color:white">Kitap Geçmişi</a></td>
         </tr>
     }
 </table>

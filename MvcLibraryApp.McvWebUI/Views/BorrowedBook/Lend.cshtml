@@ -10,21 +10,21 @@
 
 <form class="form-group" method="post">
     <div>
-        @Html.Label("Kitap Id")
-        @Html.TextBoxFor(x => x.BookId, new { @class = "form-control" })
+        @Html.Label("Kitap Adı")
+        @*@Html.TextBoxFor(x => x.BookId, new { @class = "form-control" })*@
+        @Html.DropDownListFor(x => x.Members.Id, (List<SelectListItem>)ViewBag.result1, new { @class = "form-control" })
         <br />
-        @Html.Label("Üye Id")
-        @Html.TextBoxFor(x => x.MemberId, new { @class = "form-control" })
+        @Html.Label("Üye Adı ve Soyadı")
+        @Html.DropDownListFor(x => x.Books.Id, (List<SelectListItem>)ViewBag.result2, new { @class = "form-control" })
         <br />
-        @Html.Label("Personel Id")
-        @Html.TextBoxFor(x => x.EmployeeId, new { @class = "form-control" })
-        @*@Html.DropDownListFor(x => x.Writers.Id, (List<SelectListItem>)ViewBag.writer, new { @class = "form-control" })*@
+        @Html.Label("Personel Adı ve Soyadı")
+        @Html.DropDownListFor(x => x.Employees.Id, (List<SelectListItem>)ViewBag.result3, new { @class = "form-control" })
         <br />
         @Html.Label("Kitap Verilme Tarihi")
-        <input type="text" class="form-control" name="DateOfIssue" value="@DateTime.Now.ToShortDateString()"/>
+        <input type="text" class="form-control" name="DateOfIssue" value="@DateTime.Now.ToShortDateString()" />
         <br />
         @Html.Label("Kitap Geri Alınma Tarihi")
-    <input type="text" class="form-control" name="ReturnDate" value="@DateTime.Now.AddDays(15).ToShortDateString()"/>
+        <input type="text" class="form-control" name="ReturnDate" value="@DateTime.Now.AddDays(15).ToShortDateString()" />
         <br />
         <button class="btn btn-info">Kitap Ödünç Ver</button>
         <input type="hidden" value="False" name="Status" />

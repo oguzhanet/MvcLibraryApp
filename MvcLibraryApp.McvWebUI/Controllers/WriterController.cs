@@ -62,6 +62,9 @@ namespace MvcLibraryApp.McvWebUI.Controllers
         public ActionResult WriterBook(int id)
         {
             var result = db.Books.Where(x => x.WriterId == id).ToList();
+            var writerName = db.Writers.Where(x => x.Id == id).Select(z =>
+                  z.WriterName + " " + z.WriterLastName).FirstOrDefault();
+            ViewBag.writerName = writerName;
             return View(result);
         }
     }

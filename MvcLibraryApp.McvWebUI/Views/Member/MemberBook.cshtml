@@ -1,0 +1,28 @@
+﻿@using MvcLibraryApp.McvWebUI.Models.Entity
+@model List<Movements>
+@{
+    ViewBag.Title = "MemberBook";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h2>Üye: @ViewBag.memberBook</h2>
+<br />
+
+<table class="table table-striped">
+    <tr>
+        <th>Kitap Adı</th>
+        <th>Personel Adı</th>
+        <th>Alış Tarihi</th>
+        <th>İade Tarihi</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Books.BookName</td>
+            <td>@item.Employees.EmployeeName</td>
+            <td>@Convert.ToDateTime(item.DateOfIssue).ToString("dd/MMMM/yyyy")</td>
+            <td>@Convert.ToDateTime(item.MemberReturnDate).ToString("dd/MMMM/yyyy")</td>
+        </tr>
+    }
+</table>
+

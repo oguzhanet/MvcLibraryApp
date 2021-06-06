@@ -65,5 +65,14 @@ namespace MvcLibraryApp.McvWebUI.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult MemberBook(int id)
+        {
+            var result = db.Movements.Where(x => x.MemberId == id).ToList();
+            var memberBook = db.Members.Where(x => x.Id == id).Select(z =>
+                  z.MemberName + " " + z.MemberLastName).FirstOrDefault();
+            ViewBag.memberBook = memberBook;
+            return View(result);
+        }
     }
 }

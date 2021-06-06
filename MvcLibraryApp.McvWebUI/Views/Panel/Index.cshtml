@@ -8,12 +8,12 @@
 @using (Html.BeginForm("Index", "Panel", FormMethod.Post))
 {
 <table class="table table-hover" style="margin-bottom:20px">
-    @*<tr>
+    <tr>
         <td>
             @Html.Label("Kullanıcı Numarası")
             @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
         </td>
-    </tr>*@
+    </tr>
     <tr>
         <td>
             <b>Mail Adresi:</b> @HttpContext.Current.User.Identity.Name
@@ -68,10 +68,10 @@
             <button class="btn btn-warning">Şifre Güncelle</button>
         </td>
     </tr>
-    <tr>
+    @*<tr>
         <td>
             <input type="hidden" name="Id" />
         </td>
-    </tr>
+    </tr>*@
 </table>
 }
