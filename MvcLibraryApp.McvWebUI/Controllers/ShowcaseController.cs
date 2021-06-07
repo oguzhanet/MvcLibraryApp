@@ -8,6 +8,7 @@ using MvcLibraryApp.McvWebUI.Models.Classes;
 
 namespace MvcLibraryApp.McvWebUI.Controllers
 {
+    [AllowAnonymous]
     public class ShowcaseController : Controller
     {
         // GET: Showcase

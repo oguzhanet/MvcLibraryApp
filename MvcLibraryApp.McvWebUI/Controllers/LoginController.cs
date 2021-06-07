@@ -8,9 +8,10 @@ using System.Web.Security;
 
 namespace MvcLibraryApp.McvWebUI.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
-        // GET: Login
+        // GET: Login      
         LibraryAppDbEntities db = new LibraryAppDbEntities();
 
         [HttpGet]
