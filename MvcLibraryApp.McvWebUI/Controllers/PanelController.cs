@@ -18,13 +18,37 @@ namespace MvcLibraryApp.McvWebUI.Controllers
         public ActionResult Index()
         {
             var result = (string)Session["Mail"];
-            var member = db.Members.FirstOrDefault(x => x.Mail == result);
+            //var member = db.Members.FirstOrDefault(x => x.Mail == result);
+            var member = db.Announcements.ToList();
 
             var memberName = db.Members.Where(x => x.Mail == result).Select(z => z.MemberName + " " + z.MemberLastName).FirstOrDefault();
             ViewBag.memberName = memberName;
 
             var memberImage = db.Members.Where(x => x.Mail == result).Select(z => z.Image).FirstOrDefault();
             ViewBag.memberImage = memberImage;
+
+            var memberNickName = db.Members.Where(x => x.Mail == result).Select(z => z.NickName).FirstOrDefault();
+            ViewBag.memberNickName = memberNickName;
+
+            var memberShool = db.Members.Where(x => x.Mail == result).Select(z => z.School).FirstOrDefault();
+            ViewBag.memberShool = memberShool;
+
+            var memberPhone = db.Members.Where(x => x.Mail == result).Select(z => z.Phone).FirstOrDefault();
+            ViewBag.memberPhone = memberPhone;
+
+            var memberMail = db.Members.Where(x => x.Mail == result).Select(z => z.Mail).FirstOrDefault();
+            ViewBag.memberMail = memberMail;
+
+            var memberId = db.Members.Where(x => x.Mail == result).Select(z => z.Id).FirstOrDefault();
+            var memberBookCount = db.Movements.Where(x => x.MemberId == memberId).Count();
+            ViewBag.memberBookCount = memberBookCount;
+
+            var memberMessage = db.Messages.Where(x => x.Receiver == result).Count();
+            ViewBag.memberMessage = memberMessage;
+
+            var memberAnnouncement = db.Announcements.Count();
+            ViewBag.memberAnnouncement = memberAnnouncement;
+
             return View(member);
         }
 
@@ -41,7 +65,7 @@ namespace MvcLibraryApp.McvWebUI.Controllers
             member.Image = members.Image;
             member.Password = members.Password;
             db.SaveChanges();
-            return View();
+            return RedirectToAction("Index");
         }
 
         public ActionResult MyBook()
@@ -55,6 +79,14 @@ namespace MvcLibraryApp.McvWebUI.Controllers
         public PartialViewResult PanelPartial()
         {
             return PartialView();
+        }
+
+        public PartialViewResult PanelPartial2()
+        {
+            var result = (string)Session["Mail"];
+            var id = db.Members.Where(x => x.Mail == result).Select(z => z.Id).FirstOrDefault();
+            var memberFind = db.Members.Find(id);
+            return PartialView("PanelPartial2",memberFind);
         }
 
         public ActionResult LogOut()

@@ -1,4 +1,5 @@
-﻿@model MvcLibraryApp.McvWebUI.Models.Entity.Members
+﻿@using MvcLibraryApp.McvWebUI.Models.Entity
+@model List<Announcements>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutPanel.cshtml";
@@ -54,29 +55,15 @@
 
                 <div class="col-sm-6">
 
-                    <h1>Profiliniz</h1>
+                    <h1>Profilim</h1>
 
-                </div>
-
-                <div class="col-sm-6">
-
-                    <ol class="breadcrumb float-sm-right">
-
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-
-                        <li class="breadcrumb-item active">User Profile</li>
-
-                    </ol>
-
-                </div>
+                </div>          
 
             </div>
 
         </div><!-- /.container-fluid -->
 
     </section>
-
-
 
     <!-- Main content -->
 
@@ -87,8 +74,6 @@
             <div class="row">
 
                 <div class="col-md-3">
-
-
 
                     <!-- Profile Image -->
 
@@ -102,14 +87,17 @@
                                 @if (@ViewBag.memberImage == null)
                                 {
                                     <img class="profile-user-img img-fluid img-circle"
-                                        src="~/Templates/AdminLTE-3.0.4/dist/img/2.png"
-                                        alt="User profile picture">
+                                         src="~/Templates/AdminLTE-3.0.4/dist/img/2.png"
+                                         alt="User profile picture">
                                 }
-                            
-                                <img class="profile-user-img img-fluid img-circle"
-                                     src="@ViewBag.memberImage"
-                                     alt="User profile picture">
-                                
+                                else
+                                {
+                                    <img class="profile-user-img img-fluid img-circle"
+                                         src="@ViewBag.memberImage"
+                                         alt="User profile picture">
+                                }
+
+
                             </div>
 
 
@@ -126,19 +114,19 @@
 
                                 <li class="list-group-item">
 
-                                    <b>Followers</b> <a class="float-right">1,322</a>
+                                    <b>Aldığım Kitap Sayısı</b> <a class="float-right">@ViewBag.memberBookCount</a>
 
                                 </li>
 
                                 <li class="list-group-item">
 
-                                    <b>Following</b> <a class="float-right">543</a>
+                                    <b>Gelen Mesaj Sayısı</b> <a class="float-right">@ViewBag.memberMessage</a>
 
                                 </li>
 
                                 <li class="list-group-item">
 
-                                    <b>Friends</b> <a class="float-right">13,287</a>
+                                    <b>Duyuru Sayısı</b> <a class="float-right">@ViewBag.memberAnnouncement</a>
 
                                 </li>
 
@@ -146,7 +134,7 @@
 
 
 
-                            <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+                            <a href="#" class="btn btn-primary btn-block"><b>Gelen Kutusu</b></a>
 
                         </div>
 
@@ -161,7 +149,7 @@
 
                         <div class="card-header">
 
-                            <h3 class="card-title">About Me</h3>
+                            <h3 class="card-title">Hakkımda</h3>
 
                         </div>
 
@@ -169,63 +157,29 @@
 
                         <div class="card-body">
 
-                            <strong><i class="fas fa-book mr-1"></i> Education</strong>
+                            <strong><i class="fas fa-book mr-1"></i> Eğitim Bilgisi</strong>
+                            <p class="text-muted">
 
+                                @ViewBag.memberShool
 
+                            </p>
+                            <hr>
+
+                            <strong><i class="fas fa-map-marker-alt mr-1"></i> Telefon</strong>
+                            <p class="text-muted">@ViewBag.memberPhone</p>
+                            <hr>
+
+                            <strong><i class="fas fa-pencil-alt mr-1"></i> Kullanıcı Adı</strong>
 
                             <p class="text-muted">
 
-                                B.S. in Computer Science from the University of Tennessee at Knoxville
+                               @ViewBag.memberNickName
 
                             </p>
-
-
-
                             <hr>
 
-
-
-                            <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
-
-
-
-                            <p class="text-muted">Malibu, California</p>
-
-
-
-                            <hr>
-
-
-
-                            <strong><i class="fas fa-pencil-alt mr-1"></i> Skills</strong>
-
-
-
-                            <p class="text-muted">
-
-                                <span class="tag tag-danger">UI Design</span>
-
-                                <span class="tag tag-success">Coding</span>
-
-                                <span class="tag tag-info">Javascript</span>
-
-                                <span class="tag tag-warning">PHP</span>
-
-                                <span class="tag tag-primary">Node.js</span>
-
-                            </p>
-
-
-
-                            <hr>
-
-
-
-                            <strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
-
-
-
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+                            <strong><i class="far fa-file-alt mr-1"></i> Mail Adresi</strong>
+                            <p class="text-muted">@ViewBag.memberMail</p>
 
                         </div>
 
@@ -247,11 +201,11 @@
 
                             <ul class="nav nav-pills">
 
-                                <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Activity</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Duyurular</a></li>
 
 
 
-                                <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Settings</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Ayarlar</a></li>
 
                             </ul>
 
@@ -269,115 +223,7 @@
 
                                 <div class="tab-pane" id="settings">
 
-                                    @using (Html.BeginForm("Index", "Panel", FormMethod.Post))
-
-                                    {
-
-                                        <form class="form-horizontal">
-
-                                            <div class="form-group row">
-
-                                                <label for="inputName" class="col-sm-2 col-form-label">isim</label>
-
-                                                <div class="col-sm-10">
-
-                                                    @Html.TextBoxFor(x => x.MemberName, new { @class = "form-control" })
-
-                                                </div>
-
-                                            </div>
-
-                                            <div class="form-group row">
-
-                                                <label for="inputName" class="col-sm-2 col-form-label">Soyisim</label>
-
-                                                <div class="col-sm-10">
-
-                                                    @Html.TextBoxFor(x => x.MemberLastName, new { @class = "form-control" })
-
-                                                </div>
-
-                                            </div>
-
-                                            <div class="form-group row">
-
-                                                <label for="inputName" class="col-sm-2 col-form-label">Kullanıcı Adı</label>
-
-                                                <div class="col-sm-10">
-
-                                                    @Html.TextBoxFor(x => x.NickName, new { @class = "form-control" })
-
-                                                </div>
-
-                                            </div>
-
-                                            <div class="form-group row">
-
-                                                <label for="inputName" class="col-sm-2 col-form-label">Şifre</label>
-
-                                                <div class="col-sm-10">
-
-                                                    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
-
-                                                </div>
-
-                                            </div>
-
-                                            <div class="form-group row">
-
-                                                <label for="inputName" class="col-sm-2 col-form-label">Fotoğraf Linki</label>
-
-                                                <div class="col-sm-10">
-
-                                                    @Html.TextBoxFor(x => x.Image, new { @class = "form-control" })
-
-                                                </div>
-
-                                            </div>
-
-                                            <div class="form-group row">
-
-                                                <label for="inputName" class="col-sm-2 col-form-label">Eğitim Bilgileri</label>
-
-                                                <div class="col-sm-10">
-
-                                                    @Html.TextBoxFor(x => x.School, new { @class = "form-control" })
-
-                                                </div>
-
-                                            </div>
-
-                                            @*<div class="form-group row">
-
-                                                    <div class="offset-sm-2 col-sm-10">
-
-                                                        <div class="checkbox">
-
-                                                            <label>
-
-                                                                <input type="checkbox"> Şartları okudum <a href="#">kabul ediyorum</a>
-
-                                                            </label>
-
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>*@
-
-                                            <div class="form-group row">
-
-                                                <div class="offset-sm-2 col-sm-10">
-
-                                                    <button type="submit" class="btn btn-danger">Güncelle</button>
-
-                                                </div>
-
-                                            </div>
-
-                                        </form>
-
-                                    }
+                                    @Html.Action("PanelPartial2", "Panel")
 
                                 </div>
 

@@ -41,5 +41,10 @@ namespace MvcLibraryApp.McvWebUI.Controllers
             db.SaveChanges();
             return RedirectToAction("SerderMessage");
         }
+
+        public PartialViewResult Partial()
+        {
+            return PartialView();
+        }
     }
 }

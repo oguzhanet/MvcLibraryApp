@@ -299,6 +299,7 @@
     <Content Include="Templates\AdminLTE-3.0.4\dist\img\credit\paypal2.png" />
     <Content Include="Templates\AdminLTE-3.0.4\dist\img\credit\visa.png" />
     <Content Include="Templates\AdminLTE-3.0.4\dist\img\default-150x150.png" />
+    <Content Include="Templates\AdminLTE-3.0.4\dist\img\duyuru.jpg" />
     <Content Include="Templates\AdminLTE-3.0.4\dist\img\icons.png" />
     <Content Include="Templates\AdminLTE-3.0.4\dist\img\photo1.png" />
     <Content Include="Templates\AdminLTE-3.0.4\dist\img\photo2.png" />
@@ -2747,6 +2748,8 @@
     <Content Include="Templates\AdminLTE-3.0.4\plugins\toastr\toastr.js.map" />
     <Content Include="Templates\AdminLTE-3.0.4\README.md" />
     <Content Include="Views\Panel\PanelPartial.cshtml" />
+    <Content Include="Views\Panel\PanelPartial2.cshtml" />
+    <Content Include="Views\Message\Partial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
