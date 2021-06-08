@@ -19,6 +19,12 @@ namespace MvcLibraryApp.McvWebUI.Controllers
         {
             var result = (string)Session["Mail"];
             var member = db.Members.FirstOrDefault(x => x.Mail == result);
+
+            var memberName = db.Members.Where(x => x.Mail == result).Select(z => z.MemberName + " " + z.MemberLastName).FirstOrDefault();
+            ViewBag.memberName = memberName;
+
+            var memberImage = db.Members.Where(x => x.Mail == result).Select(z => z.Image).FirstOrDefault();
+            ViewBag.memberImage = memberImage;
             return View(member);
         }
 
@@ -44,6 +50,11 @@ namespace MvcLibraryApp.McvWebUI.Controllers
             var result1 = db.Members.Where(x => x.Mail == result.ToString()).Select(c => c.Id).FirstOrDefault();
             var result2 = db.Movements.Where(x => x.MemberId == result1).ToList();
             return View(result2);
+        }
+
+        public PartialViewResult PanelPartial()
+        {
+            return PartialView();
         }
 
         public ActionResult LogOut()

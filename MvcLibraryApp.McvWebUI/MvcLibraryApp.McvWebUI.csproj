@@ -2746,6 +2746,7 @@
     <Content Include="Templates\AdminLTE-3.0.4\plugins\sweetalert2-theme-bootstrap-4\bootstrap-4.scss" />
     <Content Include="Templates\AdminLTE-3.0.4\plugins\toastr\toastr.js.map" />
     <Content Include="Templates\AdminLTE-3.0.4\README.md" />
+    <Content Include="Views\Panel\PanelPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

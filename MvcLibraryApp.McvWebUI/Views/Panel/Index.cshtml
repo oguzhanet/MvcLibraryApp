@@ -4,74 +4,432 @@
     Layout = "~/Views/Shared/_LayoutPanel.cshtml";
 }
 
-<h2>Kütüphane Üye Profil Bilgileri</h2>
-@using (Html.BeginForm("Index", "Panel", FormMethod.Post))
-{
-<table class="table table-hover" style="margin-bottom:20px">
-    <tr>
-        <td>
-            @Html.Label("Kullanıcı Numarası")
-            @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <b>Mail Adresi:</b> @HttpContext.Current.User.Identity.Name
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <b> @Html.Label("İsim")</b>
-            @Html.TextBoxFor(x => x.MemberName, new { @class = "form-control" })
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <b>  @Html.Label("Soyisim")</b>
-            @Html.TextBoxFor(x => x.MemberLastName, new { @class = "form-control" })
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <b> @Html.Label("Kullanıcı Adı")</b>
-            @Html.TextBoxFor(x => x.NickName, new { @class = "form-control" })
+<!DOCTYPE html>
 
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <b> @Html.Label("Şifre")</b>
-            @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+<html>
 
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <b> @Html.Label("Telefon")</b>
-            @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <b> @Html.Label("Eğitim Bilgisi")</b>
-            @Html.TextBoxFor(x => x.School, new { @class = "form-control" })
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <b>  @Html.Label("Fotograf Linki")</b>
-            @Html.TextBoxFor(x => x.Image, new { @class = "form-control" })
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <button class="btn btn-warning">Şifre Güncelle</button>
-        </td>
-    </tr>
-    @*<tr>
-        <td>
-            <input type="hidden" name="Id" />
-        </td>
-    </tr>*@
-</table>
-}
+<head>
+
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Kullanıcı Paneli</title>
+
+    <!-- Tell the browser to be responsive to screen width -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet" href="~/Templates/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
+
+    <!-- Ionicons -->
+
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <!-- Theme style -->
+
+    <link rel="stylesheet" href="~/Templates/AdminLTE-3.0.4/dist/css/adminlte.min.css">
+
+    <!-- Google Font: Source Sans Pro -->
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+</head>
+
+<body class="hold-transition sidebar-mini">
+
+    <!-- Navbar -->
+    <!-- Content Wrapper. Contains page content -->
+    <!-- Content Header (Page header) -->
+
+    <section class="content-header">
+
+        <div class="container-fluid">
+
+            <div class="row mb-2">
+
+                <div class="col-sm-6">
+
+                    <h1>Profiliniz</h1>
+
+                </div>
+
+                <div class="col-sm-6">
+
+                    <ol class="breadcrumb float-sm-right">
+
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+
+                        <li class="breadcrumb-item active">User Profile</li>
+
+                    </ol>
+
+                </div>
+
+            </div>
+
+        </div><!-- /.container-fluid -->
+
+    </section>
+
+
+
+    <!-- Main content -->
+
+    <section class="content">
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <div class="col-md-3">
+
+
+
+                    <!-- Profile Image -->
+
+                    <div class="card card-primary card-outline">
+
+                        <div class="card-body box-profile">
+
+                            <div class="text-center">
+
+
+                                @if (@ViewBag.memberImage == null)
+                                {
+                                    <img class="profile-user-img img-fluid img-circle"
+                                        src="~/Templates/AdminLTE-3.0.4/dist/img/2.png"
+                                        alt="User profile picture">
+                                }
+                            
+                                <img class="profile-user-img img-fluid img-circle"
+                                     src="@ViewBag.memberImage"
+                                     alt="User profile picture">
+                                
+                            </div>
+
+
+
+                            <h3 class="profile-username text-center">@ViewBag.memberName</h3>
+
+
+
+                            <p class="text-muted text-center">Kütüphane Üyesi</p>
+
+
+
+                            <ul class="list-group list-group-unbordered mb-3">
+
+                                <li class="list-group-item">
+
+                                    <b>Followers</b> <a class="float-right">1,322</a>
+
+                                </li>
+
+                                <li class="list-group-item">
+
+                                    <b>Following</b> <a class="float-right">543</a>
+
+                                </li>
+
+                                <li class="list-group-item">
+
+                                    <b>Friends</b> <a class="float-right">13,287</a>
+
+                                </li>
+
+                            </ul>
+
+
+
+                            <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+
+                        </div>
+
+                        <!-- /.card-body -->
+
+                    </div>
+
+                    <!-- /.card -->
+                    <!-- About Me Box -->
+
+                    <div class="card card-primary">
+
+                        <div class="card-header">
+
+                            <h3 class="card-title">About Me</h3>
+
+                        </div>
+
+                        <!-- /.card-header -->
+
+                        <div class="card-body">
+
+                            <strong><i class="fas fa-book mr-1"></i> Education</strong>
+
+
+
+                            <p class="text-muted">
+
+                                B.S. in Computer Science from the University of Tennessee at Knoxville
+
+                            </p>
+
+
+
+                            <hr>
+
+
+
+                            <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
+
+
+
+                            <p class="text-muted">Malibu, California</p>
+
+
+
+                            <hr>
+
+
+
+                            <strong><i class="fas fa-pencil-alt mr-1"></i> Skills</strong>
+
+
+
+                            <p class="text-muted">
+
+                                <span class="tag tag-danger">UI Design</span>
+
+                                <span class="tag tag-success">Coding</span>
+
+                                <span class="tag tag-info">Javascript</span>
+
+                                <span class="tag tag-warning">PHP</span>
+
+                                <span class="tag tag-primary">Node.js</span>
+
+                            </p>
+
+
+
+                            <hr>
+
+
+
+                            <strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
+
+
+
+                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+
+                        </div>
+
+                        <!-- /.card-body -->
+
+                    </div>
+
+                    <!-- /.card -->
+
+                </div>
+
+                <!-- /.col -->
+
+                <div class="col-md-9">
+
+                    <div class="card">
+
+                        <div class="card-header p-2">
+
+                            <ul class="nav nav-pills">
+
+                                <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Activity</a></li>
+
+
+
+                                <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Settings</a></li>
+
+                            </ul>
+
+                        </div><!-- /.card-header -->
+
+                        <div class="card-body">
+
+                            <div class="tab-content">
+
+                                <div class="active tab-pane" id="activity">
+
+                                    @Html.Partial("PanelPartial")
+
+                                </div>
+
+                                <div class="tab-pane" id="settings">
+
+                                    @using (Html.BeginForm("Index", "Panel", FormMethod.Post))
+
+                                    {
+
+                                        <form class="form-horizontal">
+
+                                            <div class="form-group row">
+
+                                                <label for="inputName" class="col-sm-2 col-form-label">isim</label>
+
+                                                <div class="col-sm-10">
+
+                                                    @Html.TextBoxFor(x => x.MemberName, new { @class = "form-control" })
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group row">
+
+                                                <label for="inputName" class="col-sm-2 col-form-label">Soyisim</label>
+
+                                                <div class="col-sm-10">
+
+                                                    @Html.TextBoxFor(x => x.MemberLastName, new { @class = "form-control" })
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group row">
+
+                                                <label for="inputName" class="col-sm-2 col-form-label">Kullanıcı Adı</label>
+
+                                                <div class="col-sm-10">
+
+                                                    @Html.TextBoxFor(x => x.NickName, new { @class = "form-control" })
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group row">
+
+                                                <label for="inputName" class="col-sm-2 col-form-label">Şifre</label>
+
+                                                <div class="col-sm-10">
+
+                                                    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group row">
+
+                                                <label for="inputName" class="col-sm-2 col-form-label">Fotoğraf Linki</label>
+
+                                                <div class="col-sm-10">
+
+                                                    @Html.TextBoxFor(x => x.Image, new { @class = "form-control" })
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group row">
+
+                                                <label for="inputName" class="col-sm-2 col-form-label">Eğitim Bilgileri</label>
+
+                                                <div class="col-sm-10">
+
+                                                    @Html.TextBoxFor(x => x.School, new { @class = "form-control" })
+
+                                                </div>
+
+                                            </div>
+
+                                            @*<div class="form-group row">
+
+                                                    <div class="offset-sm-2 col-sm-10">
+
+                                                        <div class="checkbox">
+
+                                                            <label>
+
+                                                                <input type="checkbox"> Şartları okudum <a href="#">kabul ediyorum</a>
+
+                                                            </label>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>*@
+
+                                            <div class="form-group row">
+
+                                                <div class="offset-sm-2 col-sm-10">
+
+                                                    <button type="submit" class="btn btn-danger">Güncelle</button>
+
+                                                </div>
+
+                                            </div>
+
+                                        </form>
+
+                                    }
+
+                                </div>
+
+                                <!-- /.tab-pane -->
+
+                            </div>
+
+                            <!-- /.tab-content -->
+
+                        </div><!-- /.card-body -->
+
+                    </div>
+
+                    <!-- /.nav-tabs-custom -->
+
+                </div>
+
+                <!-- /.col -->
+
+            </div>
+
+            <!-- /.row -->
+
+        </div><!-- /.container-fluid -->
+
+    </section>
+
+    <!-- /.content -->
+    <!-- Control Sidebar -->
+
+    <aside class="control-sidebar control-sidebar-dark">
+
+        <!-- Control sidebar content goes here -->
+
+    </aside>
+
+    <!-- /.control-sidebar -->
+    <!-- ./wrapper -->
+    <!-- jQuery -->
+
+    <script src="~/Templates/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap 4 -->
+
+    <script src="~/Templates/AdminLTE-3.0.4//plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AdminLTE App -->
+
+    <script src="~/Templates/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
+
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/Templates/AdminLTE-3.0.4/dist/js/demo.js"></script>
+</body>
+
+</html>
