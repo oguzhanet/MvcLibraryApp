@@ -12,7 +12,7 @@ namespace MvcLibraryApp.McvWebUI.Models.Entity
     using System;
     using System.Collections.Generic;
     
-    public partial class AdminLogin
+    public partial class AdminLogins
     {
         public int Id { get; set; }
         public string Email { get; set; }

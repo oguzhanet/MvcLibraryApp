@@ -12,7 +12,7 @@
           <Property Name="AboutId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="AboutDetail" Type="varchar(max)" />
         </EntityType>
-        <EntityType Name="AdminLogin">
+        <EntityType Name="AdminLogins">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -236,7 +236,7 @@
         <Function Name="EnFazlaOkunanKitap" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="LibraryAppDbModelStoreContainer">
           <EntitySet Name="Abouts" EntityType="Self.Abouts" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="AdminLogin" EntityType="Self.AdminLogin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AdminLogins" EntityType="Self.AdminLogins" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Announcements" EntityType="Self.Announcements" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Books" EntityType="Self.Books" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
@@ -522,7 +522,7 @@
           <FunctionImport Name="EnFazlaOkunanKitap" ReturnType="Collection(String)" />
           <EntitySet Name="Messages" EntityType="LibraryAppDbModel.Messages" />
           <EntitySet Name="Announcements" EntityType="LibraryAppDbModel.Announcements" />
-          <EntitySet Name="AdminLogin" EntityType="LibraryAppDbModel.AdminLogin" />
+          <EntitySet Name="AdminLogins" EntityType="LibraryAppDbModel.AdminLogins" />
         </EntityContainer>
         <EntityType Name="Abouts">
           <Key>
@@ -561,7 +561,7 @@
           <Property Name="AnnouncementContent" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
           <Property Name="Date" Type="DateTime" Precision="3" />
         </EntityType>
-        <EntityType Name="AdminLogin">
+        <EntityType Name="AdminLogins">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -725,9 +725,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="AdminLogin">
-            <EntityTypeMapping TypeName="LibraryAppDbModel.AdminLogin">
-              <MappingFragment StoreEntitySet="AdminLogin">
+          <EntitySetMapping Name="AdminLogins">
+            <EntityTypeMapping TypeName="LibraryAppDbModel.AdminLogins">
+              <MappingFragment StoreEntitySet="AdminLogins">
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Id" ColumnName="Id" />

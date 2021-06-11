@@ -141,6 +141,7 @@
     <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\BorrowedBookController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -159,7 +160,7 @@
     <Compile Include="Models\Entity\Abouts.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Entity\AdminLogin.cs">
+    <Compile Include="Models\Entity\AdminLogins.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\Announcements.cs">
@@ -2868,6 +2869,7 @@
     <Content Include="Templates\AdminLogin\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
     <Content Include="Templates\AdminLogin\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="Templates\AdminLogin\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Views\Chart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
