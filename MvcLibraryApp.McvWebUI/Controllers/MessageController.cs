@@ -44,6 +44,12 @@ namespace MvcLibraryApp.McvWebUI.Controllers
 
         public PartialViewResult Partial()
         {
+            var memberMail = (string)Session["Mail"].ToString();
+            var result1 = db.Messages.Where(x => x.Receiver == memberMail).Count();
+            ViewBag.result1 = result1;
+
+            var result2 = db.Messages.Where(x => x.Sender == memberMail).Count();
+            ViewBag.result2 = result2;
             return PartialView();
         }
     }

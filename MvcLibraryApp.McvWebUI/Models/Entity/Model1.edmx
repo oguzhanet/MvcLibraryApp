@@ -12,6 +12,14 @@
           <Property Name="AboutId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="AboutDetail" Type="varchar(max)" />
         </EntityType>
+        <EntityType Name="AdminLogin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="30" />
+          <Property Name="Password" Type="varchar" MaxLength="20" />
+        </EntityType>
         <EntityType Name="Announcements">
           <Key>
             <PropertyRef Name="Id" />
@@ -228,6 +236,7 @@
         <Function Name="EnFazlaOkunanKitap" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="LibraryAppDbModelStoreContainer">
           <EntitySet Name="Abouts" EntityType="Self.Abouts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AdminLogin" EntityType="Self.AdminLogin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Announcements" EntityType="Self.Announcements" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Books" EntityType="Self.Books" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
@@ -513,6 +522,7 @@
           <FunctionImport Name="EnFazlaOkunanKitap" ReturnType="Collection(String)" />
           <EntitySet Name="Messages" EntityType="LibraryAppDbModel.Messages" />
           <EntitySet Name="Announcements" EntityType="LibraryAppDbModel.Announcements" />
+          <EntitySet Name="AdminLogin" EntityType="LibraryAppDbModel.AdminLogin" />
         </EntityContainer>
         <EntityType Name="Abouts">
           <Key>
@@ -550,6 +560,14 @@
           <Property Name="AnnouncementCategory" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="AnnouncementContent" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
           <Property Name="Date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="AdminLogin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -703,6 +721,15 @@
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="AnnouncementContent" ColumnName="AnnouncementContent" />
                 <ScalarProperty Name="AnnouncementCategory" ColumnName="AnnouncementCategory" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AdminLogin">
+            <EntityTypeMapping TypeName="LibraryAppDbModel.AdminLogin">
+              <MappingFragment StoreEntitySet="AdminLogin">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

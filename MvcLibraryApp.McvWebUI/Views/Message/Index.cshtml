@@ -7,25 +7,6 @@
 
 <h2>Gelen Mesajlar Sayfası</h2>
 <br />
-
-@*<table class="table table-bordered">
-        <tr>
-            <th>Gönderen</th>
-            <th>Konu</th>
-            <th>Mesaj</th>
-            <th>İşlem Tarihi</th>
-        </tr>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.Sender</td>
-                <td>@item.Subject</td>
-                <td>@item.Message</td>
-                <td>@item.Date</td>
-            </tr>
-        }
-    </table>*@
-
 <!DOCTYPE html>
 
 <html>
@@ -73,7 +54,7 @@
 
         <div class="row">
 
-           @Html.Partial("Partial")
+           @Html.Action("Partial","Message")
 
             <!-- /.col -->
 

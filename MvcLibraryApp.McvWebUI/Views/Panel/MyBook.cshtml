@@ -5,44 +5,202 @@
     Layout = "~/Views/Shared/_LayoutPanel.cshtml";
 }
 
-<h2>Kitaplarım</h2>
-
-
 @*@using (Html.BeginForm("Index", "BorrowedBook", FormMethod.Get))
-{
-    <div style="margin-bottom:20px; margin-top:18px;">
-        <table>
-            <tr>
-                <td>
-                    <a href="/BorrowedBook/Lend/" class="btn btn-default" style="background-color:deepskyblue; margin-right:300px;">Ödünç Kitap Ver</a>
-                </td>
-                <td>
-                    <input style="margin-right:100px" type="text" class="form-control" name="books" placeholder="Aranacak kitabı giriniz ve enter yapınız.." />
-                </td>
-                <td>
-                    <input class="btn btn-success" style="margin-left:15px" type="submit" value="Ara" />
-                </td>
-            </tr>
-        </table>
-    </div>
-}*@
-
-<table class="table table-bordered">
-    <tr>
-        <th>Kitabın Adı</th>
-        <th>Yayınevi</th>
-        <th>Verilme Tarihi</th>
-        <th>Geri Alınma Tarihi</th>
-
-    </tr>
-    @foreach (var item in Model)
     {
-        <tr>
-            <td>@item.Books.BookName</td>
-            <td>@item.Books.PublishingHouse</td>
-            <td>@Convert.ToDateTime(item.DateOfIssue).ToString("dd/MM/yyyy")</td>
-            <td>@Convert.ToDateTime(item.MemberReturnDate).ToString("dd/MM/yyyy")</td>
-        </tr>
-    }
-</table>
+        <div style="margin-bottom:20px; margin-top:18px;">
+            <table>
+                <tr>
+                    <td>
+                        <a href="/BorrowedBook/Lend/" class="btn btn-default" style="background-color:deepskyblue; margin-right:300px;">Ödünç Kitap Ver</a>
+                    </td>
+                    <td>
+                        <input style="margin-right:100px" type="text" class="form-control" name="books" placeholder="Aranacak kitabı giriniz ve enter yapınız.." />
+                    </td>
+                    <td>
+                        <input class="btn btn-success" style="margin-left:15px" type="submit" value="Ara" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    }*@
 
+@*<table class="table table-bordered">
+        <tr>
+            <th>Kitabın Adı</th>
+            <th>Yayınevi</th>
+            <th>Verilme Tarihi</th>
+            <th>Geri Alınma Tarihi</th>
+
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Books.BookName</td>
+                <td>@item.Books.PublishingHouse</td>
+                <td>@Convert.ToDateTime(item.DateOfIssue).ToString("dd/MM/yyyy")</td>
+                <td>@Convert.ToDateTime(item.MemberReturnDate).ToString("dd/MM/yyyy")</td>
+            </tr>
+        }
+    </table>*@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Kitaplarım</title>
+
+    <!-- Tell the browser to be responsive to screen width -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet" href="~/Templates/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
+
+    <!-- Ionicons -->
+
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <!-- Theme style -->
+
+    <link rel="stylesheet" href="~/Templates/AdminLTE-3.0.4/dist/css/adminlte.min.css">
+
+    <!-- Google Font: Source Sans Pro -->
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+</head>
+
+<body class="hold-transition sidebar-mini">
+
+    <div class="wrapper">
+
+        <section class="content-header">
+
+            <div class="container-fluid">
+
+                <div class="row mb-2">
+
+                    <div class="col-sm-6">
+
+                        <h1>Alınan Kitaplar</h1>
+
+                    </div>
+
+                </div>
+
+            </div><!-- /.container-fluid -->
+
+        </section>
+
+        <!-- Main content -->
+
+        <section class="content">
+
+            <div class="container-fluid">
+
+                <!-- /.row -->
+
+                <div class="row">
+
+                    <div class="col-12">
+
+                        <div class="card">
+
+                            <div class="card-header">
+
+                                <h3 class="card-title">Kütüphaneden Alınan Kitaplar</h3>
+
+                                <div class="card-tools">
+
+                                    <div class="input-group input-group-sm" style="width: 150px;">
+
+                                        <input type="text" name="table_search" class="form-control float-right" placeholder="Kitap Ara">
+
+                                        <div class="input-group-append">
+
+                                            <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- /.card-header -->
+
+                            <div class="card-body table-responsive p-0">
+
+                                <table class="table table-hover text-nowrap">
+
+                                    <thead>
+
+                                        <tr>
+                                            <th>Kitabın Adı</th>
+
+                                            <th>Yayınevi</th>
+
+                                            <th>Verilme Tarihi</th>
+
+                                            <th>Geri Alınma Tarihi</th>
+                                        </tr>
+
+                                    </thead>
+
+                                    <tbody>
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>@item.Books.BookName</td>
+
+                                                <td>@item.Books.PublishingHouse</td>
+
+                                                <td>@Convert.ToDateTime(item.DateOfIssue).ToString("dd/MM/yyyy")</td>
+
+                                                <td>@Convert.ToDateTime(item.MemberReturnDate).ToString("dd/MM/yyyy")</td>
+                                            </tr>
+                                        }
+
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+
+                            <!-- /.card-body -->
+
+                        </div>
+
+                        <!-- /.card -->
+
+                    </div>
+
+                </div>
+
+                <!-- /.row -->
+                <!-- /.row -->
+
+            </div><!-- /.container-fluid -->
+
+        </section>
+
+        <!-- /.content -->
+
+    </div>
+
+    <!-- /.content-wrapper -->
+    <!-- ./wrapper -->
+    <!-- jQuery -->
+
+</body>
+
+</html>

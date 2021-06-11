@@ -7,6 +7,7 @@ using MvcLibraryApp.McvWebUI.Models.Entity;
 
 namespace MvcLibraryApp.McvWebUI.Controllers
 {
+    [AllowAnonymous]
     public class RegisterController : Controller
     {
         // GET: Register
