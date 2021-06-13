@@ -64,7 +64,7 @@ to get the desired effect
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-    with font-awesome or any other icon font library -->
+                        with font-awesome or any other icon font library -->
                         <li class="nav-item has-treeview ">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-home"></i>
@@ -179,22 +179,29 @@ to get the desired effect
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="/Statistics/LinqCard/" class="nav-link">
-                                <i class="nav-icon fas fa-id-card-alt"></i>
-                                <p>
-                                    Linq Kartlar
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/Statistics/Air/" class="nav-link">
-                                <i class="nav-icon fas fa-cloud"></i>
-                                <p>
-                                    Hava Raporları
-                                </p>
-                            </a>
-                        </li>
+                        @if (User.IsInRole("A"))
+                        {
+                            <li class="nav-item">
+                                <a href="/Statistics/LinqCard/" class="nav-link">
+                                    <i class="nav-icon fas fa-id-card-alt"></i>
+                                    <p>
+                                        Linq Kartlar
+                                    </p>
+                                </a>
+                            </li>
+                        }
+                        @if (!User.IsInRole("A"))
+                        {
+                            <li class="nav-item">
+                                <a href="/Statistics/Air/" class="nav-link">
+                                    <i class="nav-icon fas fa-cloud"></i>
+                                    <p>
+                                        Hava Raporları
+                                    </p>
+                                </a>
+                            </li>
+                        }
+
                         <li class="nav-item">
                             <a href="/Statistics/AirCard/" class="nav-link">
                                 <i class="nav-icon fas fa-cloud-download-alt"></i>
@@ -211,14 +218,18 @@ to get the desired effect
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="/Settings/Index/" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
-                                <p>
-                                    Ayarlar
-                                </p>
-                            </a>
-                        </li>
+                        @if (User.IsInRole("A"))
+                        {
+                            <li class="nav-item">
+                                <a href="/Settings/Index/" class="nav-link">
+                                    <i class="nav-icon fas fa-th"></i>
+                                    <p>
+                                        Ayarlar
+                                    </p>
+                                </a>
+                            </li>
+                        }
+
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-apple-alt"></i>
