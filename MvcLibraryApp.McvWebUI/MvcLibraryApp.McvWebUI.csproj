@@ -151,6 +151,7 @@
     <Compile Include="Controllers\OperationController.cs" />
     <Compile Include="Controllers\PanelController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
     <Compile Include="Controllers\ShowcaseController.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Controllers\WriterController.cs" />
@@ -2885,6 +2886,7 @@
     <Content Include="Templates\ErrorPage\fonts\fontawesome-webfont.woff" />
     <Content Include="Templates\ErrorPage\fonts\fontawesome-webfont.woff2" />
     <Content Include="Templates\ErrorPage\fonts\FontAwesome.otf" />
+    <Content Include="Views\Settings\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -3,87 +3,258 @@
     Layout = null;
 }
 
-<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="~/Templates/web2/css/style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        body {
-            font-family: "Lato", sans-serif;
-        }
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-        .sidebar {
-            height: 100%;
-            width: 240px;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: #111;
-            overflow-x: hidden;
-            padding-top: 16px;
-        }
+    <title>Admin Paneli</title>
 
-            .sidebar a {
-                padding: 10px 14px 10px 10px;
-                text-decoration: none;
-                font-size: 20px;
-                color: #818181;
-                display: block;
-            }
-
-                .sidebar a:hover {
-                    color: #00ff90;
-                }
-
-        .main {
-            margin-left: 240px; /* Same as the width of the sidenav */
-            padding: 0px 10px;
-        }
-
-        @@media screen and (max-height: 450px) {
-            .sidebar {
-                padding-top: 15px;
-            }
-
-                .sidebar a {
-                    font-size: 18px;
-                }
-        }
-    </style>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="~/Templates/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
+    <!-- IonIcons -->
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/Templates/AdminLTE-3.0.4/dist/css/adminlte.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body>
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to to the body tag
+to get the desired effect
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
 
-    <div class="sidebar">
-        <a href="#"><i class="glyphicon glyphicon-home"></i> &nbsp; Ana Sayfa</a>
-        @*<a href="#home"><i class="fa fa-fw fa-home"></i> Home</a>*@
-        <a href="/Category/Index/"><i class="glyphicon glyphicon-list"></i> &nbsp; Kategoriler</a>
-        <a href="/Book/Index/"><i class="glyphicon glyphicon-book"></i> &nbsp; Kitaplar</a>
-        <a href="/Writer/Index/"><i class="glyphicon glyphicon-pencil"></i> &nbsp; Yazarlar</a>
-        <a href="/Member/Index/"><i class="glyphicon glyphicon-user"></i> &nbsp; Üyeler</a>
-        <a href="/Employee/Index/"><i class="glyphicon glyphicon-lock"></i> &nbsp; Personeller</a>
-        <a href="/Showcase/Index/"><i class="glyphicon glyphicon-gift"></i> &nbsp; Vitrin</a>
-        <a href="/BorrowedBook/Lend/"><i class="glyphicon glyphicon-circle-arrow-right"></i> &nbsp; Ödünç Kitap Ver</a>
-        <a href="/BorrowedBook/Index/"><i class="glyphicon glyphicon-circle-arrow-left"></i> &nbsp; Ödünç Kitap Al</a>
-        <a href="/Announcement/Index/"><i class="glyphicon glyphicon-apple"></i> &nbsp; Duyurular</a>
-        <a href="/Statistics/Index/"><i class="glyphicon glyphicon-sort"></i> &nbsp; İstatistikler</a>
-        <a href="/Operation/Index/"><i class="glyphicon glyphicon-dashboard"></i> &nbsp; İşlemler</a>
-        <a href="/Statistics/Gallery/"><i class="glyphicon glyphicon-picture"></i> &nbsp; Galeri</a>
-        <a href="/Statistics/LinqCard/"><i class="glyphicon glyphicon-bookmark"></i> &nbsp; Linq Kartlar</a>
-        <a href="/Statistics/Air/"><i class="glyphicon glyphicon-cloud"></i> &nbsp; Hava Raporu</a>
-        <a href="/Statistics/AirCard/"><i class="glyphicon glyphicon-plane"></i> &nbsp; Hava Kartları</a>
-        <a href="/Chart/Index/"><i class="glyphicon glyphicon-play"></i> &nbsp; Grafikler</a>
-        <a href="#"><i class="glyphicon glyphicon-cog"></i> &nbsp; Ayarlar</a>
-        <a href="#"><i class="glyphicon glyphicon-remove-sign"></i> &nbsp; Çıkış</a>
+            </ul>
+        </nav>
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="index3.html" class="brand-link">
+                <img src="~/Templates/AdminLTE-3.0.4/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+                     style="opacity: .8">
+                <span class="brand-text font-weight-light">Admin Paneli</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user panel (optional) -->
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="info">
+                        <a href="#" class="d-block">Panel Araçları</a>
+                    </div>
+                </div>
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+    with font-awesome or any other icon font library -->
+                        <li class="nav-item has-treeview ">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-home"></i>
+                                <p>
+                                    Ana Sayfa
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item has-treeview ">
+                            <a href="/Category/Index/" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Kategoriler
+
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item has-treeview ">
+                            <a href="/Book/Index/" class="nav-link">
+                                <i class="nav-icon fas fa-book-open"></i>
+                                <p>
+                                    Kitaplar
+
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/Writer/Index/" class="nav-link">
+                                <i class="nav-icon fas fa-user-check"></i>
+                                <p>
+                                    Yazarlar
+
+                                </p>
+                            </a>
+
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/Member/Index/" class="nav-link">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>
+                                    Üyeler
+
+                                </p>
+                            </a>
+
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/Employee/Index/" class="nav-link">
+                                <i class="nav-icon fas fa-user-clock"></i>
+                                <p>
+                                    Personeller
+
+                                </p>
+                            </a>
+
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/BorrowedBook/Lend/" class="nav-link">
+                                <i class="nav-icon fas fa-arrow-alt-circle-right"></i>
+                                <p>
+                                    Ödünç Kitap Ver
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/BorrowedBook/Index/" class="nav-link">
+                                <i class="nav-icon fas fa-arrow-alt-circle-left"></i>
+                                <p>
+                                    Ödünç Kitap Al
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/Showcase/Index/" class="nav-link">
+                                <i class="nav-icon fas fa-book"></i>
+                                <p>
+                                    Siteye Git
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/Announcement/Index/" class="nav-link">
+                                <i class="nav-icon fas fa-circle"></i>
+                                <p>
+                                    Duyurular
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Statistics/Index/" class="nav-link">
+                                <i class="nav-icon fas fa-copy"></i>
+                                <p>
+                                    İstatistik Tablosu
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Operation/Index/" class="nav-link">
+                                <i class="nav-icon fas fa-pencil-alt"></i>
+                                <p>
+                                    İşlemler
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Statistics/Gallery/" class="nav-link">
+                                <i class="nav-icon far fa-image"></i>
+                                <p>
+                                    Galeri
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Statistics/LinqCard/" class="nav-link">
+                                <i class="nav-icon fas fa-id-card-alt"></i>
+                                <p>
+                                    Linq Kartlar
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Statistics/Air/" class="nav-link">
+                                <i class="nav-icon fas fa-cloud"></i>
+                                <p>
+                                    Hava Raporları
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Statistics/AirCard/" class="nav-link">
+                                <i class="nav-icon fas fa-cloud-download-alt"></i>
+                                <p>
+                                    Hava Kartları
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Chart/Index/" class="nav-link">
+                                <i class="nav-icon fas fa-chart-pie"></i>
+                                <p>
+                                    Grafikler
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Settings/Index/" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Ayarlar
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-apple-alt"></i>
+                                <p>
+                                    Çıkış
+                                </p>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <br />
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <div class="content">
+                @RenderBody()
+                <!-- /.container-fluid -->
+            </div>
+            <!-- /.content -->
+        </div>
     </div>
+    <!-- jQuery -->
+    <script src="~/Templates/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="~/Templates/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE -->
+    <script src="~/Templates/AdminLTE-3.0.4/dist/js/adminlte.js"></script>
 
-    <div class="main">
-        @RenderBody()
-    </div>
-
+    <!-- OPTIONAL SCRIPTS -->
+    <script src="~/Templates/AdminLTE-3.0.4/plugins/chart.js/Chart.min.js"></script>
+    <script src="~/Templates/AdminLTE-3.0.4/dist/js/demo.js"></script>
+    <script src="~/Templates/AdminLTE-3.0.4/dist/js/pages/dashboard3.js"></script>
 </body>
 </html>
