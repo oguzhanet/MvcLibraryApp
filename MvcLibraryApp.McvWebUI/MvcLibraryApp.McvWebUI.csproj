@@ -2887,6 +2887,7 @@
     <Content Include="Templates\ErrorPage\fonts\fontawesome-webfont.woff2" />
     <Content Include="Templates\ErrorPage\fonts\FontAwesome.otf" />
     <Content Include="Views\Settings\Index.cshtml" />
+    <Content Include="Views\Settings\AdminUpdate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

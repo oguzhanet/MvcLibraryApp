@@ -1,0 +1,27 @@
+﻿@model MvcLibraryApp.McvWebUI.Models.Entity.AdminLogins
+@{
+    ViewBag.Title = "AdminUpdate";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<br />
+
+@using (Html.BeginForm("AdminUpdate", "Settings", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.Label("Id")
+    @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
+    <br />
+    @Html.Label("Email")
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    <br />
+    @Html.Label("Şifre")
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+    <br />
+    @Html.Label("Yetkisi")
+    @Html.TextBoxFor(x => x.AdminRole, new { @class = "form-control" })
+</div>
+    <div>
+        <button class="btn btn-default" style="background-color:coral; color:white">Güncelle</button>
+    </div>
+}
