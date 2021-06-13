@@ -83,6 +83,7 @@
           <Property Name="NickName" Type="varchar" MaxLength="20" />
           <Property Name="Password" Type="varchar" MaxLength="20" />
           <Property Name="IdentityNumber" Type="varchar" MaxLength="11" />
+          <Property Name="Role" Type="char" MaxLength="1" />
         </EntityType>
         <EntityType Name="Messages">
           <Key>
@@ -333,6 +334,7 @@
           <Property Name="IdentityNumber" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Movements" Relationship="Self.FK_Movements_Members" FromRole="Members" ToRole="Movements" />
           <NavigationProperty Name="Penalties" Relationship="Self.FK_Penalties_Members" FromRole="Members" ToRole="Penalties" />
+          <Property Name="Role" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
         </EntityType>
         <EntityType Name="Movements">
           <Key>
@@ -612,6 +614,7 @@
           <EntitySetMapping Name="Members">
             <EntityTypeMapping TypeName="LibraryAppDbModel.Members">
               <MappingFragment StoreEntitySet="Members">
+                <ScalarProperty Name="Role" ColumnName="Role" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="MemberName" ColumnName="MemberName" />
                 <ScalarProperty Name="MemberLastName" ColumnName="MemberLastName" />

@@ -40,7 +40,18 @@ namespace MvcLibraryApp.McvWebUI.Roles
         {
             LibraryAppDbEntities db = new LibraryAppDbEntities();
             var result = db.AdminLogins.FirstOrDefault(x => x.Email == username);
-            return new string[] { result.AdminRole };
+            var result1 = db.Members.FirstOrDefault(x => x.Mail == username);
+            if (result !=null)
+            {
+               
+                return new string[] { result.AdminRole };
+            }
+            else if (result1 !=null)
+            {
+                
+                return new string[] { result1.Role };
+            }
+            return new string[] { };
         }
 
         public override string[] GetUsersInRole(string roleName)
