@@ -143,6 +143,7 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\ErrorPageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
@@ -2172,6 +2173,14 @@
     <Content Include="Templates\Content\css\style.css" />
     <Content Include="Templates\Content\index.html" />
     <Content Include="Templates\Content\readme.txt" />
+    <Content Include="Templates\ErrorPage\css\font-awesome.min.css" />
+    <Content Include="Templates\ErrorPage\css\popuo-box.css" />
+    <Content Include="Templates\ErrorPage\css\style.css" />
+    <Content Include="Templates\ErrorPage\images\b8.jpg" />
+    <Content Include="Templates\ErrorPage\index.html" />
+    <Content Include="Templates\ErrorPage\js\jquery-2.2.3.min.js" />
+    <Content Include="Templates\ErrorPage\js\jquery.magnific-popup.js" />
+    <Content Include="Templates\ErrorPage\w3layouts-License.txt" />
     <Content Include="Templates\startpanel\401.html" />
     <Content Include="Templates\startpanel\404.html" />
     <Content Include="Templates\startpanel\500.html" />
@@ -2870,6 +2879,12 @@
     <Content Include="Templates\AdminLogin\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="Templates\AdminLogin\vendor\bootstrap\css\bootstrap.min.css.map" />
     <Content Include="Views\Chart\Index.cshtml" />
+    <Content Include="Views\ErrorPage\Page404.cshtml" />
+    <Content Include="Templates\ErrorPage\fonts\fontawesome-webfont.eot" />
+    <Content Include="Templates\ErrorPage\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Templates\ErrorPage\fonts\fontawesome-webfont.woff" />
+    <Content Include="Templates\ErrorPage\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Templates\ErrorPage\fonts\FontAwesome.otf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
