@@ -11,11 +11,10 @@
 <form class="form-group" method="post">
     <div>
         @Html.Label("Kitap Adı")
-        @*@Html.TextBoxFor(x => x.BookId, new { @class = "form-control" })*@
-        @Html.DropDownListFor(x => x.Members.Id, (List<SelectListItem>)ViewBag.result1, new { @class = "form-control" })
+        @Html.DropDownListFor(x => x.Books.Id, (List<SelectListItem>)ViewBag.result2, new { @class = "form-control" })
         <br />
         @Html.Label("Üye Adı ve Soyadı")
-        @Html.DropDownListFor(x => x.Books.Id, (List<SelectListItem>)ViewBag.result2, new { @class = "form-control" })
+        @Html.DropDownListFor(x => x.Members.Id, (List<SelectListItem>)ViewBag.result1, new { @class = "form-control" })
         <br />
         @Html.Label("Personel Adı ve Soyadı")
         @Html.DropDownListFor(x => x.Employees.Id, (List<SelectListItem>)ViewBag.result3, new { @class = "form-control" })

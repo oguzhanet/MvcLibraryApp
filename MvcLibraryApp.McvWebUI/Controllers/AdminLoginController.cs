@@ -36,5 +36,11 @@ namespace MvcLibraryApp.McvWebUI.Controllers
             ViewBag.ErrorMessage = "Email veya Şifreniz Yanlış!";
             return View();
         }
+
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "AdminLogin");
+        }
     }
 }

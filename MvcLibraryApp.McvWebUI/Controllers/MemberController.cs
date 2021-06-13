@@ -31,6 +31,7 @@ namespace MvcLibraryApp.McvWebUI.Controllers
             {
                 return View("Add");
             }
+            members.Role = "C";
             db.Members.Add(members);
             db.SaveChanges();
             return RedirectToAction("Index");
