@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using MvcLibraryApp.McvWebUI.Models.Entity;
 using System.Web.Security;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace MvcLibraryApp.McvWebUI.Controllers
 {
@@ -23,7 +25,11 @@ namespace MvcLibraryApp.McvWebUI.Controllers
         [HttpPost]
         public ActionResult Index(Members members)
         {
-            var result = db.Members.FirstOrDefault(x => x.Mail == members.Mail && x.Password == members.Password);
+            SHA1 sha1 = new SHA1CryptoServiceProvider();
+            string password = members.Password;
+            string result1 = Convert.ToBase64String(sha1.ComputeHash(Encoding.UTF8.GetBytes(password)));
+            members.Password = result1;
+            var result = db.Members.FirstOrDefault(x => x.Mail == members.Mail && x.Password == result1);
             if (result !=null)
             {
                 FormsAuthentication.SetAuthCookie(result.Mail, false);

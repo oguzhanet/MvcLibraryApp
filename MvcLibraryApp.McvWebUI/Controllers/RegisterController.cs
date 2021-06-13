@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using MvcLibraryApp.McvWebUI.Models.Entity;
@@ -26,10 +28,14 @@ namespace MvcLibraryApp.McvWebUI.Controllers
             {
                 return View("Index");
             }
+            SHA1 sha1 = new SHA1CryptoServiceProvider();
+            string password = members.Password;
+            string result = Convert.ToBase64String(sha1.ComputeHash(Encoding.UTF8.GetBytes(password)));
+            members.Password = result;
             members.Role = "C";
             db.Members.Add(members);
             db.SaveChanges();
-            return View();
+            return RedirectToAction("Index", "Login");
         }
     }
 }
