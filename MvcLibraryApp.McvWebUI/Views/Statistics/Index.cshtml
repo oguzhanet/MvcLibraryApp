@@ -4,173 +4,406 @@
     Layout = "~/Views/Shared/_Layout1.cshtml";
 }
 
-<h2>Index</h2>
-<link href="~/Templates/web2/css/jqvmap.css" rel="stylesheet" />
-<link href="~/Templates/web2/css/style.css" rel="stylesheet" />
-<script src="~/Templates/web2/js/jquery.min.js"></script>
-<script src="~/Templates/web2/js/jquery.vmap.js"></script>
-<script src="~/Templates/web2/js/jquery.vmap.sampledata.js"></script>
-<script src="~/Templates/web2/js/jquery.vmap.world.js"></script>
-<script src="~/Templates/web2/js/Chart1.js"></script>
-<script>
-    $(document).ready(function (c) {
-        $('.alert-close6').on('click', function (c) {
-            $('.world-map').fadeOut('slow', function (c) {
-                $('.world-map').remove();
-            });
-        });
-    });
-</script>
-<script type="text/javascript">
-    jQuery(document).ready(function () {
-        jQuery('#vmap').vectorMap({
-            map: 'world_en',
-            backgroundColor: '#333333',
-            color: '#ffffff',
-            hoverOpacity: 0.7,
-            selectedColor: '#666666',
-            enableZoom: true,
-            showTooltip: true,
-            values: sample_data,
-            scaleColors: ['#C8EEFF', '#006491'],
-            normalizeFunction: 'polynomial'
-        });
-    });
-</script>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AdminLTE 3 | Dashboard</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+    @*<link rel="stylesheet" href="~/Templates/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">*@
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Tempusdominus Bbootstrap 4 -->
+    <link rel="stylesheet" href="~/Templates/AdminLTE-3.0.4/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="~/Templates/AdminLTE-3.0.4/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="~/Templates/AdminLTE-3.0.4/plugins/jqvmap/jqvmap.min.css">
+    <!-- Theme style -->
+    @*<link rel="stylesheet" href="~/Templates/AdminLTE-3.0.4/dist/css/adminlte.min.css">*@
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="~/Templates/AdminLTE-3.0.4/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="~/Templates/AdminLTE-3.0.4/plugins/daterangepicker/daterangepicker.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="~/Templates/AdminLTE-3.0.4/plugins/summernote/summernote-bs4.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
 
-<div class="list_of_members">
-    <div class="sales">
-        <div class="icon">
-            <i ></i>
-        </div>
-        <div class="icon-text">
-            <h3>₺ &nbsp;  @ViewBag.result</h3>
-            <p style="margin-left:55px"> Kasadaki Tutar</p>
-        </div>
-        <div class="clearfix"></div>
-    </div>
-    <div class="new-users">
-        <div class="icon">
-            <i class="user1"></i>
-        </div>
-        <div class="icon-text">
-            <h3>@ViewBag.result1</h3>
-            <p>Toplam Üye</p>
-        </div>
-        <div class="clearfix"></div>
-    </div>
-    <div class="orders">
-        <div class="icon">
-            <i class="order"></i>
-        </div>
-        <div class="icon-text">
-            <h3>@ViewBag.result2</h3>
-            <p>Toplam Kitap</p>
-        </div>
-        <div class="clearfix"></div>
-    </div>
-    <div class="visitors">
-        <div class="icon">
-            <i class="visit"></i>
-        </div>
-        <div class="icon-text">
-            <h3>@ViewBag.result3</h3>
-            <p>Verilen Kitaplar</p>
-        </div>
-        <div class="clearfix"></div>
-    </div>
-    <div class="clearfix"></div>
-</div>
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0 text-dark">Ana Sayfa</h1>
+                    </div><!-- /.col -->
 
-<div class="total-sales">
-    <div class="user-trends">
-        <div class="alert-close7"> </div>
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <!-- Small boxes (Stat box) -->
+                <div class="row">
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-info">
+                            <div class="inner">
+                                <h3>@ViewBag.result ₺</h3>
 
-        <canvas id="bar" height="340" width="780"></canvas>
+                                <p>Kasadaki Tutar</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-bag"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">Daha fazlası için <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-success">
+                            <div class="inner">
+                                <h3>@ViewBag.result2</h3>
+
+                                <p>Toplam Kitap Sayımız</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-stats-bars"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">Daha fazlası için <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-warning">
+                            <div class="inner">
+                                <h3>@ViewBag.result1</h3>
+
+                                <p>Toplam Üyemiz</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-person-add"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">Daha fazlası için <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-danger">
+                            <div class="inner">
+                                <h3>@ViewBag.result3</h3>
+
+                                <p>Verilen Kitap Sayımız</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-pie-graph"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">Daha fazlası için <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                </div>
+                <!-- /.row -->
+                <!-- Main row -->
+                <div class="row">
+                    <!-- Left col -->
+                    <section class="col-lg-7 connectedSortable">
+                        <!-- Custom tabs (Charts with tabs)-->
+                        <!-- TO DO List -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    <i class="ion ion-clipboard mr-1"></i>
+                                    Yapılacaklar Listesi
+                                </h3>
+
+                                <div class="card-tools">
+                                    <ul class="pagination pagination-sm">
+                                        <li class="page-item"><a href="#" class="page-link">&laquo;</a></li>
+                                        <li class="page-item"><a href="#" class="page-link">1</a></li>
+                                        <li class="page-item"><a href="#" class="page-link">2</a></li>
+                                        <li class="page-item"><a href="#" class="page-link">3</a></li>
+                                        <li class="page-item"><a href="#" class="page-link">&raquo;</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <ul class="todo-list" data-widget="todo-list">
+                                    <li>
+                                        <!-- drag handle -->
+                                        <span class="handle">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </span>
+                                        <!-- checkbox -->
+                                        <div class="icheck-primary d-inline ml-2">
+                                            <input type="checkbox" value="" name="todo1" id="todoCheck1">
+                                            <label for="todoCheck1"></label>
+                                        </div>
+                                        <!-- todo text -->
+                                        <span class="text">Yayınevleri ile iletişime Geçilecek</span>
+                                        <!-- Emphasis label -->
+                                        <small class="badge badge-danger"><i class="far fa-clock"></i> 38 mins</small>
+                                        <!-- General tools such as edit or delete-->
+                                        <div class="tools">
+                                            <i class="fas fa-edit"></i>
+                                            <i class="fas fa-trash-o"></i>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="handle">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </span>
+                                        <div class="icheck-primary d-inline ml-2">
+                                            <input type="checkbox" value="" name="todo2" id="todoCheck2" checked>
+                                            <label for="todoCheck2"></label>
+                                        </div>
+                                        <span class="text">Verilen Kitaplar için Kontrol Sağlanacak</span>
+                                        <small class="badge badge-info"><i class="far fa-clock"></i> 4 hours</small>
+                                        <div class="tools">
+                                            <i class="fas fa-edit"></i>
+                                            <i class="fas fa-trash-o"></i>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="handle">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </span>
+                                        <div class="icheck-primary d-inline ml-2">
+                                            <input type="checkbox" value="" name="todo3" id="todoCheck3">
+                                            <label for="todoCheck3"></label>
+                                        </div>
+                                        <span class="text">Kasa Kontrol Edilecek</span>
+                                        <small class="badge badge-warning"><i class="far fa-clock"></i> 1 day</small>
+                                        <div class="tools">
+                                            <i class="fas fa-edit"></i>
+                                            <i class="fas fa-trash-o"></i>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="handle">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </span>
+                                        <div class="icheck-primary d-inline ml-2">
+                                            <input type="checkbox" value="" name="todo4" id="todoCheck4">
+                                            <label for="todoCheck4"></label>
+                                        </div>
+                                        <span class="text">Haftasonu Çalışması Planlanacak</span>
+                                        <small class="badge badge-success"><i class="far fa-clock"></i> 3 days</small>
+                                        <div class="tools">
+                                            <i class="fas fa-edit"></i>
+                                            <i class="fas fa-trash-o"></i>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="handle">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </span>
+                                        <div class="icheck-primary d-inline ml-2">
+                                            <input type="checkbox" value="" name="todo5" id="todoCheck5">
+                                            <label for="todoCheck5"></label>
+                                        </div>
+                                        <span class="text">Yeni Kitap Girişi İşlemi Yapılacak</span>
+                                        <small class="badge badge-primary"><i class="far fa-clock"></i> 1 week</small>
+                                        <div class="tools">
+                                            <i class="fas fa-edit"></i>
+                                            <i class="fas fa-trash-o"></i>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="handle">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </span>
+                                        <div class="icheck-primary d-inline ml-2">
+                                            <input type="checkbox" value="" name="todo6" id="todoCheck6">
+                                            <label for="todoCheck6"></label>
+                                        </div>
+                                        <span class="text">Okuma Yarışması Etkinliği Sınavı Hazırlanacak</span>
+                                        <small class="badge badge-secondary"><i class="far fa-clock"></i> 1 month</small>
+                                        <div class="tools">
+                                            <i class="fas fa-edit"></i>
+                                            <i class="fas fa-trash-o"></i>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer clearfix">
+                                <button type="button" class="btn btn-info float-right"><i class="fas fa-plus"></i> Ekle</button>
+                            </div>
+                        </div>
+                        <!-- /.card -->
+                    </section>
+                    <!-- /.Left col -->
+                    <!-- right col (We are only adding the ID to make the widgets sortable)-->
+                    <section class="col-lg-5 connectedSortable">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="card-title">Sistem Raporları</h5>
+
+                                        <div class="card-tools">
+                                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                <i class="fas fa-minus"></i>
+                                            </button>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
+                                                    <i class="fas fa-wrench"></i>
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                                    <a href="#" class="dropdown-item">Action</a>
+                                                    <a href="#" class="dropdown-item">Another action</a>
+                                                    <a href="#" class="dropdown-item">Something else here</a>
+                                                    <a class="dropdown-divider"></a>
+                                                    <a href="#" class="dropdown-item">Separated link</a>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <div class="card-body">
+                                        <div class="row">
+                                            
+                                            <!-- /.col -->
+                                            <div class="col-md-12">
+                                                <p class="text-center">
+                                                    <strong>Raporlar</strong>
+                                                </p>
+
+                                                <div class="progress-group">
+                                                    Bu ay eklenen kitaplar
+                                                    <span class="float-right"><b>28</b>/100</span>
+                                                    <div class="progress progress-sm">
+                                                        <div class="progress-bar bg-primary" style="width: 28%"></div>
+                                                    </div>
+                                                </div>
+                                                <!-- /.progress-group -->
+
+                                                <div class="progress-group">
+                                                    Bu ay bağlantı kurulan yazarlar
+                                                    <span class="float-right"><b>38</b>/100</span>
+                                                    <div class="progress progress-sm">
+                                                        <div class="progress-bar bg-danger" style="width: 38%"></div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- /.progress-group -->
+                                                <div class="progress-group">
+                                                    <span class="progress-text">Bu ay bağlantı kuralan yayınevleri</span>
+                                                    <span class="float-right"><b>16</b>/100</span>
+                                                    <div class="progress progress-sm">
+                                                        <div class="progress-bar bg-success" style="width: 16%"></div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- /.progress-group -->
+                                                <div class="progress-group">
+                                                    Bu ay verilen kitaplar
+                                                    <span class="float-right"><b>140</b>/200</span>
+                                                    <div class="progress progress-sm">
+                                                        <div class="progress-bar bg-warning" style="width: 70%"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="progress-group">
+                                                    Bu ay eklenen üyeler
+                                                    <span class="float-right"><b>79</b>/100</span>
+                                                    <div class="progress progress-sm">
+                                                        <div class="progress-bar bg-dark" style="width: 79%"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="progress-group">
+                                                    Bu ay geç getirilen kitaplar
+                                                    <span class="float-right"><b>8</b>/100</span>
+                                                    <div class="progress progress-sm">
+                                                        <div class="progress-bar bg-info" style="width: 8%"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="progress-group">
+                                                    Bu ay düzenlen yarışmalar
+                                                    <span class="float-right"><b>4</b>/100</span>
+                                                    <div class="progress progress-sm">
+                                                        <div class="progress-bar bg-gradient-pink" style="width: 4%"></div>
+                                                    </div>
+                                                </div>
+                                                <!-- /.progress-group -->
+                                            </div>
+                                            <!-- /.col -->
+                                        </div>
+                                        <!-- /.row -->
+                                    </div>
+                                    <!-- ./card-body -->
+                                    
+                                    <!-- /.card-footer -->
+                                </div>
+
+                                <!-- /.card -->
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                        <!-- /.card -->
+                    </section>
+                    <!-- right col -->
+                </div>
+                <!-- /.row (main row) -->
+            </div><!-- /.container-fluid -->
+        </section>
+        </div>
+        <!-- /.content -->
+        <!-- ./wrapper -->
+        <!-- jQuery -->
+        @*<script src="~/Templates/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>*@
+        <!-- jQuery UI 1.11.4 -->
+        <script src="~/Templates/AdminLTE-3.0.4/plugins/jquery-ui/jquery-ui.min.js"></script>
+        <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
         <script>
-
-            var barChartData = {
-                labels: ["Ocak", "Mart", "Mayıs", "Temmuz", "Eylül", "Kasım", "Aralık"],
-                datasets: [
-                    {
-                        fillColor: "rgba(255, 137, 167, 0.78)",
-                        strokeColor: "rgba(220,220,220,1)",
-                        data: [65, 59, 90, 81, 56, 55, 40]
-                    },
-                    {
-                        fillColor: "rgba(140, 145, 255, 0.69)",
-                        strokeColor: "rgba(151,187,205,1)",
-                        data: [28, 48, 40, 19, 96, 27, 100]
-                    }
-                ]
-
-            }
-
-            var myLine = new Chart(document.getElementById("bar").getContext("2d")).Bar(barChartData);
-
+            $.widget.bridge('uibutton', $.ui.button)
         </script>
-    </div>
-    <div class="to-do">
-        <div class="alert-close5"> </div>
-        <h3>Yapılacak Listesi</h3>
-        <div class="checkbox-form">
-            <div class="check">
-                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Yayınevini Ara</label>
-            </div>
-            <div class="check">
-                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Verilen Kitaplar için Kontrol</label>
-            </div>
-            <div class="check">
-                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Kasayı Kontrol Et</label>
-            </div>
-            <div class="check">
-                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Haftasonu Çalışması</label>
-            </div>
-            <div class="check">
-                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Yeni Kitapların Girişi/label</label>
-            </div>
-        </div>
-    </div>
-    <div class="clearfix"></div>
-</div>
-
-<div class="total-world">
-    <div class="world-map">
-        <div class="alert-close6"> </div>
-        <h3>Dünya Haritasi</h3>
-        <p><span class="color1"></span>40%<span class="color2"></span>12%<span class="color3"></span>11%<span class="color4"></span>10%<span class="color5"></span>18%</p>
-        <div class="clearfix"></div>
-        <div id="vmap" style="width: 600px; height: 400px;"></div>
-    </div>
-    <div class="site-report">
-        <div class="alert-close3"> </div>
-        <h3>Sistem Raporları</h3>
-        <div class="skills-top">
-            <h5>Memnuniyet</h5>
-            <h4>95%</h4>
-            <div class="clearfix"></div>
-            <div class="skills">
-                <div class="skill" style="width:95%"></div>
-            </div>
-        </div>
-        <div class="skills-top">
-            <h5>Güvenilirlik</h5>
-            <h4>98%</h4>
-            <div class="clearfix"></div>
-            <div class="skills">
-                <div class="skill1" style="width:98%"></div>
-            </div>
-        </div>
-        <div class="skills-top">
-            <h5>Haftalık Geri dönüş</h5>
-            <h4>89%</h4>
-            <div class="clearfix"></div>
-            <div class="skills">
-                <div class="skill2" style="width:89%"></div>
-            </div>
-        </div>
-        <p>Kütüphane sistemini admin paneline hoş geldiniz.</p>
-    </div>
-    <div class="clearfix"></div>
-</div>
-<br /><br /><br />
+        <!-- Bootstrap 4 -->
+        @*<script src="~/Templates/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>*@
+        <!-- ChartJS -->
+        @*<script src="~/Templates/AdminLTE-3.0.4/plugins/chart.js/Chart.min.js"></script>*@
+        <!-- Sparkline -->
+        <script src="~/Templates/AdminLTE-3.0.4/plugins/sparklines/sparkline.js"></script>
+        <!-- JQVMap -->
+        <script src="~/Templates/AdminLTE-3.0.4/plugins/jqvmap/jquery.vmap.min.js"></script>
+        <script src="~/Templates/AdminLTE-3.0.4/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+        <!-- jQuery Knob Chart -->
+        <script src="~/Templates/AdminLTE-3.0.4/plugins/jquery-knob/jquery.knob.min.js"></script>
+        <!-- daterangepicker -->
+        <script src="~/Templates/AdminLTE-3.0.4/plugins/moment/moment.min.js"></script>
+        <script src="~/Templates/AdminLTE-3.0.4/plugins/daterangepicker/daterangepicker.js"></script>
+        <!-- Tempusdominus Bootstrap 4 -->
+        <script src="~/Templates/AdminLTE-3.0.4/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+        <!-- Summernote -->
+        <script src="~/Templates/AdminLTE-3.0.4/plugins/summernote/summernote-bs4.min.js"></script>
+        <!-- overlayScrollbars -->
+        <script src="~/Templates/AdminLTE-3.0.4/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+        <!-- AdminLTE App -->
+        @*<script src="~/Templates/AdminLTE-3.0.4/dist/js/adminlte.js"></script>*@
+        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+        <script src="~/Templates/AdminLTE-3.0.4/dist/js/pages/dashboard.js"></script>
+        <!-- AdminLTE for demo purposes -->
+        @*<script src="~/Templates/AdminLTE-3.0.4/dist/js/demo.js"></script>*@
+</body>
+</html>
