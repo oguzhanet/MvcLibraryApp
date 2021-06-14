@@ -2889,6 +2889,7 @@
     <Content Include="Templates\ErrorPage\fonts\FontAwesome.otf" />
     <Content Include="Views\Settings\Index.cshtml" />
     <Content Include="Views\Settings\AdminUpdate.cshtml" />
+    <Content Include="Views\Operation\Operation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

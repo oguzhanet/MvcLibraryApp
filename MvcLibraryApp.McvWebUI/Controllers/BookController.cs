@@ -84,8 +84,6 @@ namespace MvcLibraryApp.McvWebUI.Controllers
                                             }).ToList();
             ViewBag.writer = writers;
 
-            ViewBag.writer = writers;
-
             return View("GetById", result);
         }
 

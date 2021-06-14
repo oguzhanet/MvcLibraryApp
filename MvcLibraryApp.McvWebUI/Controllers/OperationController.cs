@@ -16,5 +16,11 @@ namespace MvcLibraryApp.McvWebUI.Controllers
             var result = db.Movements.Where(x => x.Status == true).ToList();
             return View(result);
         }
+
+        public ActionResult Operation(int id)
+        {
+            var result = db.Movements.Find(id);
+            return View("Operation", result);
+        }
     }
 }

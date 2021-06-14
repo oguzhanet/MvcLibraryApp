@@ -1,0 +1,34 @@
+﻿@model MvcLibraryApp.McvWebUI.Models.Entity.Movements
+@{
+    ViewBag.Title = "Operation";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+
+@using (Html.BeginForm("Update", "Book", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.Label("Hareket Id")
+    @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
+    <br />
+    @Html.Label("Üye İsmi")
+    @Html.TextBoxFor(x => x.Members.MemberName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Üye Soyismi")
+    @Html.TextBoxFor(x => x.Members.MemberLastName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Personel İsmi")
+    @Html.TextBoxFor(x => x.Employees.EmployeeName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Verilme Tarihi")
+    @Html.TextBoxFor(x => x.DateOfIssue, new { @class = "form-control" })
+    <br />
+    @Html.Label("Geri Verilme Tarihi")
+    @Html.TextBoxFor(x => x.ReturnDate, new { @class = "form-control" })
+    <br />
+    @Html.Label("Üyenin Getirdiği Tarihi")
+    @Html.TextBoxFor(x => x.MemberReturnDate, new { @class = "form-control" })
+</div>
+}
+
+

@@ -49,7 +49,7 @@
             <td>@item.Books.PublishingHouse</td>
             <td>@Convert.ToDateTime(item.DateOfIssue).ToString("dd/MM/yyyy")</td>
             <td>@Convert.ToDateTime(item.MemberReturnDate).ToString("dd/MM/yyyy")</td>
-            <td><a href="/BorrowedBook/Borrow/@item.Id" class="btn btn-info">Detaylar</a></td>
+            <td><a href="/Operation/Operation/@item.Id" class="btn btn-info">Detaylar</a></td>
         </tr>
     }
 </table>
