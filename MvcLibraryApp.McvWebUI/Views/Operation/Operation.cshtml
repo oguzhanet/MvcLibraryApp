@@ -4,13 +4,8 @@
     Layout = "~/Views/Shared/_Layout1.cshtml";
 }
 
-
-@using (Html.BeginForm("Update", "Book", FormMethod.Post))
-{
 <div class="form-group">
-    @Html.Label("Hareket Id")
-    @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
-    <br />
+
     @Html.Label("Üye İsmi")
     @Html.TextBoxFor(x => x.Members.MemberName, new { @class = "form-control" })
     <br />
@@ -29,6 +24,9 @@
     @Html.Label("Üyenin Getirdiği Tarihi")
     @Html.TextBoxFor(x => x.MemberReturnDate, new { @class = "form-control" })
 </div>
-}
+<div>
+    <a href="/Operation/Index/" class="btn btn-default" style="background-color:coral; color:white">Geri Dön</a>
+</div>
+
 
 

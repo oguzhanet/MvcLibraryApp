@@ -94,6 +94,7 @@ namespace MvcLibraryApp.McvWebUI.Controllers
             result.YearOfPrinting = books.YearOfPrinting;
             result.PublishingHouse = books.PublishingHouse;
             result.NumberOfPage = books.NumberOfPage;
+            result.BookImage = books.BookImage;
             result.Status = true;
 
             var category = db.Categories.Where(x => x.Id == books.Categories.Id).FirstOrDefault();

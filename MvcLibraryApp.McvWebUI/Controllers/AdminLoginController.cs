@@ -30,7 +30,7 @@ namespace MvcLibraryApp.McvWebUI.Controllers
             {
                 FormsAuthentication.SetAuthCookie(result.Email, false);
                 Session["Email"] = result.Email.ToString();
-                return RedirectToAction("Index", "Category");
+                return RedirectToAction("Index", "Statistics");
             }
 
             ViewBag.ErrorMessage = "Email veya Şifreniz Yanlış!";

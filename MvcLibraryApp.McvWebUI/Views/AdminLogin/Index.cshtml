@@ -53,7 +53,14 @@
                     <input class="input100" type="password" name="Password" placeholder="Şifre">
                     <span class="focus-input100"></span>
                 </div>
-
+                if (ViewBag.ErrorMessage != null)
+                {
+                    <div class="text-center" style="margin-bottom:15px">
+                        <a class="text-gray-dark">
+                            @ViewBag.ErrorMessage
+                        </a>
+                    </div>
+                }
                 <div class="container-login100-form-btn">
                     <button type="submit" class="login100-form-btn">
                         Giriş Yap
@@ -78,7 +85,7 @@
 
                 <div class="text-center">
                     <a href="#" class="txt2 hov1">
-                      
+
                     </a>
                 </div>
             }

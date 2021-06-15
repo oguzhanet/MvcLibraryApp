@@ -9,14 +9,13 @@
 <a href="/Category/Add/" class="btn btn-default" style="background-color:deepskyblue; color:white; margin-block-end:15px;">Yeni Kategori Ekle</a>
 
 <table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Kategori Adı</th>
-            <th>Silme İşlemi</th>
-            <th>Güncelleme İşlemi</th>
-        </tr>
-    </thead>
+    <tr style="background-color:rgb(252,178,22)">
+        <th>Id</th>
+        <th>Kategori Adı</th>
+        <th>Silme İşlemi</th>
+        <th>Güncelleme İşlemi</th>
+    </tr>
+
     @foreach (var category in Model)
     {
         <tbody>

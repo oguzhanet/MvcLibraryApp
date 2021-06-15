@@ -29,11 +29,6 @@ namespace MvcLibraryApp.McvWebUI.Controllers
             return View();
         }
 
-        public ActionResult Air()
-        {
-            return View();
-        }
-
         public ActionResult AirCard()
         {
             return View();

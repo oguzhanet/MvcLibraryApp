@@ -55,8 +55,8 @@ to get the desired effect
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="info">
-                        <a href="#" class="d-block">Panel Araçları</a>
+                    <div class="info">                   
+                        <a href="#" class="d-block"><i style="margin-left:12px;" class="nav-icon fas fa-address-book"></i> &nbsp; Panel Araçları</a>
                     </div>
                 </div>
 
@@ -183,18 +183,6 @@ to get the desired effect
                                 </a>
                             </li>
                         }
-                        @if (!User.IsInRole("A"))
-                        {
-                            <li class="nav-item">
-                                <a href="/Statistics/Air/" class="nav-link">
-                                    <i class="nav-icon fas fa-cloud"></i>
-                                    <p>
-                                        Hava Raporları
-                                    </p>
-                                </a>
-                            </li>
-                        }
-
                         <li class="nav-item">
                             <a href="/Statistics/AirCard/" class="nav-link">
                                 <i class="nav-icon fas fa-cloud-download-alt"></i>
@@ -216,7 +204,7 @@ to get the desired effect
                         }
                         <li class="nav-item">
                             <a href="/AdminLogin/LogOut/" class="nav-link">
-                                <i class="nav-icon fas fa-apple-alt"></i>
+                                <i class="nav-icon fas fa-sign-out-alt"></i>
                                 <p>
                                     Çıkış
                                 </p>
