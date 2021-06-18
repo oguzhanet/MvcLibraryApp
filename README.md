@@ -1,12 +1,12 @@
 # MvcLibraryApp
 Kütüphane Yönetim Sistemi
 
-[Canlıya taşınmmış linki](http://ozan12345-001-site1.htempurl.com/)
+[Canlıya taşınmmış linki için tıklayın](http://ozan12345-001-site1.htempurl.com/)
 
-[Kullanıcı girişi için](http://ozan12345-001-site1.htempurl.com/Login/Index/) <br/>
-Kullanıcı adı :  ahmet@gmail.com
+[Kullanıcı girişi için tıklayın](http://ozan12345-001-site1.htempurl.com/Login/Index/) <br/>
+Kullanıcı adı :  ahmet@gmail.com <br/>
 Şifre : 12345
 
-[Admin girişi için](http://ozan12345-001-site1.htempurl.com/AdminLogin/Index/)
-Email : ozan@gmail.com
+[Admin girişi için tıklayın](http://ozan12345-001-site1.htempurl.com/AdminLogin/Index/) <br/>
+Email : ozan@gmail.com <br/>
 Şifre : 12345
