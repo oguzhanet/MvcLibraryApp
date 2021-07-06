@@ -20,7 +20,6 @@ namespace MvcLibraryApp.McvWebUI.Controllers
             BookAndAbout bookAndAbout = new BookAndAbout();
             bookAndAbout.Books = db.Books.ToList();
             bookAndAbout.Abouts = db.Abouts.ToList();
-            //var result = db.Books.ToList();
             return View(bookAndAbout);
         }
 

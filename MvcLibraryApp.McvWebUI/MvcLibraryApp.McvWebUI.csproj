@@ -239,6 +239,31 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="SayfaResimleri\1.png" />
+    <Content Include="SayfaResimleri\10.png" />
+    <Content Include="SayfaResimleri\11.png" />
+    <Content Include="SayfaResimleri\12.png" />
+    <Content Include="SayfaResimleri\13.png" />
+    <Content Include="SayfaResimleri\14.png" />
+    <Content Include="SayfaResimleri\15.png" />
+    <Content Include="SayfaResimleri\16.png" />
+    <Content Include="SayfaResimleri\17.png" />
+    <Content Include="SayfaResimleri\18.png" />
+    <Content Include="SayfaResimleri\19.png" />
+    <Content Include="SayfaResimleri\2.png" />
+    <Content Include="SayfaResimleri\20.png" />
+    <Content Include="SayfaResimleri\21.png" />
+    <Content Include="SayfaResimleri\22.png" />
+    <Content Include="SayfaResimleri\23.png" />
+    <Content Include="SayfaResimleri\24.png" />
+    <Content Include="SayfaResimleri\3.png" />
+    <Content Include="SayfaResimleri\4.png" />
+    <Content Include="SayfaResimleri\5.1.png" />
+    <Content Include="SayfaResimleri\5.png" />
+    <Content Include="SayfaResimleri\6.png" />
+    <Content Include="SayfaResimleri\7.png" />
+    <Content Include="SayfaResimleri\8.png" />
+    <Content Include="SayfaResimleri\9.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\Entity\Model1.edmx">

@@ -44,7 +44,6 @@ namespace MvcLibraryApp.McvWebUI.Controllers
         {
             var result = db.AdminLogins.Find(admin.Id);
             result.Email = admin.Email;
-            result.Password = admin.Password;
             result.AdminRole = admin.AdminRole;
             db.SaveChanges();
             return RedirectToAction("Index");

@@ -62,7 +62,6 @@ namespace MvcLibraryApp.McvWebUI.Controllers
             result.Image = members.Image;
             result.IdentityNumber = members.IdentityNumber;
             result.NickName = members.NickName;
-            result.Password = members.Password;
             db.SaveChanges();
             return RedirectToAction("Index");
         }
